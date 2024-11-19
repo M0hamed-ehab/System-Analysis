@@ -76,7 +76,11 @@ h2,
 
 .LCCCr {
     display: flex;
-    gap: 1%;
-    margin-top: 1%;
+    align-items: center;
 
+}
+
+.LCCCrc {
+    font-weight: bold;
+    margin: 0 1%;
 }
