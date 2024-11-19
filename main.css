@@ -1,49 +1,82 @@
 .LCH {
-    padding: 5%;
-    margin: 10%;
-    border: 2px solid black;
-    display: block;
-    border-radius: 10px;
-    position: relative;
-    background-color: aliceblue;
-    box-shadow: 0px 10px 10px 10px black;
 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    display: block;
+    border-radius: 20px;
+    padding: 1%;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 2%;
+    background-color: white;
 }
 
-h1,
+
 p,
+h2,
 .LCCCn {
-    text-align: center;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+
 
 }
 
 .backgrounds {
-    background-image: radial-gradient(circle, burlywood, rgb(255, 255, 255));
+    background-color: #e8f1f2;
+    font-family: 'Courier New', Courier, monospace;
+
 }
 
 .LCCCs {
-    border: 1px solid black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: block;
-    border-radius: 14px;
+
     position: left;
-    background-color: rgb(179, 196, 210);
-    width: 50%;
+    background-color: white;
+
     padding: 2%;
+
+    border-radius: 8px;
+    margin-bottom: 2rem;
+
 }
+
 
 .LCCCn {
     text-align: left;
-    display: inline-block;
+    display: flex;
     font-weight: bold;
+    font-size: large;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(67, 136, 200);
 }
 
-.LCCCi {
-    display: inline;
 
-}
 
 .LCCCt {
     padding: 2%;
+}
+
+.LCCCnd {
+
+    text-align: right;
+    color: rgb(150, 159, 159);
+    font-size: small;
+
+}
+
+
+.LCCCC {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    margin: 0 5%;
+
+}
+
+.LCCCr {
+    display: flex;
+    gap: 1%;
+    margin-top: 1%;
+
 }
