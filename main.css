@@ -137,8 +137,56 @@ h2,
 .btttn {
     padding: 16px;
     border-radius: 18px;
-    display: block;
+
     border: 1px solid #ddd;
     background-color: rgb(77, 159, 236);
     color: white;
+    text-align: center;
+}
+
+
+
+
+.LCCCE {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 2%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+
+.LCCCEc {
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid rgb(77, 159, 236);
+    padding: 1.5%;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flexbox;
+}
+
+.LCCCEc h3 {
+    color: rgb(37, 133, 223);
+    font-weight: 800;
+    font-size: 32px;
+    display: block;
+}
+
+
+.LCCCEt {
+    line-height: 1.5;
+    padding: 2%;
+    display: block;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.backgrounds button:hover {
+    transform: scale(1.01);
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
 }
