@@ -10,7 +10,7 @@
     background-color: white;
 }
 
-
+button,
 p,
 h2,
 .LCCCn {
@@ -22,25 +22,24 @@ h2,
 .backgrounds {
     background-color: #e8f1f2;
     font-family: 'Courier New', Courier, monospace;
-
+    font-weight: 500;
 }
 
 .LCCCs {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: block;
-
     position: left;
     background-color: white;
-
     padding: 2%;
-
     border-radius: 8px;
     margin-bottom: 2rem;
+
 
 }
 
 
-.LCCCn {
+.LCCCn,
+.LCCCnp {
     text-align: left;
     display: flex;
     font-weight: bold;
@@ -54,6 +53,7 @@ h2,
 
 .LCCCt {
     padding: 2%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .LCCCnd {
@@ -80,7 +80,65 @@ h2,
 
 }
 
+.LCCCr button {
+    background-color: rgb(240, 248, 255);
+    border: inherit;
+    border-radius: 0 20%;
+
+
+
+}
+
 .LCCCrc {
     font-weight: bold;
     margin: 0 1%;
+}
+
+
+#LCCCpt button {
+    padding: 16px;
+    border-radius: 18px;
+    display: block;
+    border: 1px solid #ddd;
+    background-color: rgb(77, 159, 236);
+    color: white;
+}
+
+#LCCCpt {
+    font-size: medium;
+    align-items: center;
+
+}
+
+#LCCCpt textarea {
+    width: 95%;
+    padding: 1%;
+    margin: 1% 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.LCCCnp {
+    color: rgb(65, 201, 90);
+
+}
+
+
+
+.removePost {
+    font-weight: bold;
+    color: red;
+    background-color: aliceblue;
+    border: 0;
+}
+
+.btttn {
+    padding: 16px;
+    border-radius: 18px;
+    display: block;
+    border: 1px solid #ddd;
+    background-color: rgb(77, 159, 236);
+    color: white;
 }
