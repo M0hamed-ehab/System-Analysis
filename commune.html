@@ -7,6 +7,7 @@
     <meta name="description" content="The Library Community to chat and share your thoughts" />
     <title>The Community</title>
     <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
 </head>
 
 <body class="backgrounds">
@@ -19,23 +20,37 @@
     </div>
     <div class="LCCCC">
         <div class="LCCCs">
+            <div class="LCCCn">
+                <h2 style="color: black;">Post?</h2> <span class="LCCCnd"></span>
+            </div>
+            <div class="LCCCp">
+                <form id="LCCCpt">
+                    <textarea id="POST" placeholder="Write your review or opinion..."></textarea>
+                    <button type="button" onclick="createPost()">Post</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="NEWPOST" id="NEWPOST"></div>
+
+        <div class="LCCCs">
             <div class="LCCCsj">
                 <div class="LCCCn">
-                    Momo <span class="LCCCnd">11-11-2222</span>
+                    lee <span class="LCCCnd">2 hours</span>
                 </div>
             </div>
             <div class="LCCCt">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium vero nisi sequi recusandae ad sed
-                cum
-                vitae totam officiis nam neque, labore amet fugit ullam, ipsum qui, aperiam mollitia dignissimos.
+                Just finished reading 'To Kill a Mockingbird' and it was an incredible experience. The themes of racial
+                injustice and moral growth were so impactful. Highly recommend!
             </div>
 
             <div class="LCCCr">
-                <button class="LCCCrd" onclick="">
+                <button class="LCCCrd" onclick="dislike(this)">
                     <span>&#128078;</span>
                 </button>
-                <span class="LCCCrc">0</span>
-                <button class="LCCCru" onclick="">
+                <span class="LCCCrc">22</span>
+                <button class="LCCCru" onclick="like(this)">
                     <span>&#128077;</span>
                 </button>
             </div>
@@ -43,25 +58,164 @@
         <div class="LCCCs">
             <div class="LCCCsj">
                 <div class="LCCCn">
-                    Momo <span class="LCCCnd">11-11-2222</span>
+                    Livraria Lello <span class="LCCCnd">6 hours</span>
                 </div>
             </div>
             <div class="LCCCt">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium vero nisi sequi recusandae ad sed
-                cum
-                vitae totam officiis nam neque, labore amet fugit ullam, ipsum qui, aperiam mollitia dignissimos.
+                Very nice library, different from the ones I visited before, plus it's said that it inspired the Harry
+                Potter movies, which is kinda cool.<br>
+                The queue is always so long, we wanted to get in the morning but it was almost impossible to wait so
+                long under the rain, so we decided to go at the last schedule, we bought skip the line tickets, but
+                we're surprised when we got in that it was sooo crowded you could barely walk or see anything, people
+                wanting to take pictures of themselves and of the place, it made the experience unpleasant.<br>
+                I think they need to work more on the organization and only let few people get in at a the time to be
+                able to enjoy the beauty of the library.
             </div>
 
             <div class="LCCCr">
-                <button class="LCCCrd" onclick="">
+                <button class="LCCCrd" onclick="dislike(this)">
                     <span>&#128078;</span>
                 </button>
-                <span class="LCCCrc">0</span>
-                <button class="LCCCru" onclick="">
+                <span class="LCCCrc">7</span>
+                <button class="LCCCru" onclick="like(this)">
                     <span>&#128077;</span>
                 </button>
             </div>
         </div>
+        <div class="LCCCs">
+            <div class="LCCCsj">
+                <div class="LCCCn">
+                    Sarah <span class="LCCCnd">9 hours</span>
+                </div>
+            </div>
+            <div class="LCCCt">
+                The library has just added a new section of mystery novels, and I can't wait to dive into them! Any good
+                suggestions for a thrilling read?
+            </div>
+
+            <div class="LCCCr">
+                <button class="LCCCrd" onclick="dislike(this)">
+                    <span>&#128078;</span>
+                </button>
+                <span class="LCCCrc">44</span>
+                <button class="LCCCru" onclick="like(this)">
+                    <span>&#128077;</span>
+                </button>
+            </div>
+        </div>
+        <div class="LCCCs">
+            <div class="LCCCsj">
+                <div class="LCCCn">
+                    Alex Falcone <span class="LCCCnd">1 Day</span>
+                </div>
+            </div>
+            <div class="LCCCt">
+                If you liked Hunger Games but thought it needed more rules, you're going to love
+                Divergent!<br /><br />The debut novel from Veronica Roth, Divergent imagines a future after a great war.
+                The only way to restore peace is to divide humanity up into 5 Death Frats named after SAT words. People
+                join them by having only one personality trait: brave people join Dauntless where they jump off trains
+                and punch each other. Smart people join Erudite where they wear glasses. Amish people join Abnegation
+                where they don't eat hamburgers. And the other two are both Hufflepuff.<br /><br />In the EXTREMELY RARE
+                situation where somebody has two personality traits ("I have glasses AND don't eat hamburgers!" -or- "I
+                play baseball AND football") they are "divergent" (a Latin word meaning "too cool for
+                school").<br /><br />"But wait," you say. "How do they figure out which frat to join?" I'm glad you
+                asked. Pledge week in Dystopian Chicago consists of a hallucination where you have to choose between a
+                knife and cheese with no other instructions. Then a dog attacks you. If you choose the knife, you are
+                Dauntless. If you choose the cheese, you're not. Isn't that cool? That's all it takes. You either want a
+                knife or you want cheese, and that decision confines you to a single Death Frat for the rest of your
+                life. That's their NEARLY FOOLPROOF system. Knife or cheese. Maybe I'm not Divergent, I'm just lactose
+                intolerant!<br /><br />Eventually the smart people use the brave people to kill the Amish people and
+                only a teenage girl with two different interests can save them all. With her boyfriend. And something
+                about a hard drive that controls humanity (presumably connecting via USB 27.0).<br /><br />Anyway, it
+                doesn't make much sense but expect a million more books about dystopian futures where kids kill each
+                other, because Hunger Games sold faster than a grey tunic in an Abnegation camp.
+            </div>
+
+            <div class="LCCCr">
+                <button class="LCCCrd" onclick="dislike(this)">
+                    <span>&#128078;</span>
+                </button>
+                <span class="LCCCrc">60</span>
+                <button class="LCCCru" onclick="like(this)">
+                    <span>&#128077;</span>
+                </button>
+            </div>
+        </div>
+        <div class="LCCCs">
+            <div class="LCCCsj">
+                <div class="LCCCn">
+                    Cat Woods <span class="LCCCnd">1 Day</span>
+                </div>
+            </div>
+            <div class="LCCCt">
+                Killing Moon is so cruelly, brutally misogynistic and brimming with every savage cliche of crime fiction
+                that it’s barely readable … Nearly ten pages into Killing Moon, I wondered whether Nesbo had always
+                depicted women in such a cruel, hateful way. Did I overlook it for two whole decades? … Perhaps some
+                readers simply don’t mind Nesbo’s description of young women as ‘parasitic bimbos on the hunt for a
+                suitable host’ because, as he asserts, it’s traditional …
+
+                Maybe someone needs to remind Nesbo that storytelling in fiction allows us to explore alternate worlds.
+                It lets us stand in the shoes of characters who are both like us and entirely different so we can expand
+                our thinking and take on new perspectives. Storytelling that relies on tired cliches that frame women as
+                hapless gold-digging victims who are lucky to have an ancient, alcoholic ex-cop on their case is a
+                literary tradition we can do without.
+            </div>
+
+            <div class="LCCCr">
+                <button class="LCCCrd" onclick="dislike(this)">
+                    <span>&#128078;</span>
+                </button>
+                <span class="LCCCrc">-10</span>
+                <button class="LCCCru" onclick="like(this)">
+                    <span>&#128077;</span>
+                </button>
+            </div>
+        </div>
+        <div class="LCCCs">
+            <div class="LCCCsj">
+                <div class="LCCCn">
+                    Madeline <span class="LCCCnd">1 Day</span>
+                </div>
+            </div>
+            <div class="LCCCt">
+                In my hands I hold $5<br>I will give it to anyone who can of "The Catcher in the Rye"<br>(or why there
+                is
+                no plot) and make me understand why the hell people think it's so amazing
+            </div>
+
+            <div class="LCCCr">
+                <button class="LCCCrd" onclick="dislike(this)">
+                    <span>&#128078;</span>
+                </button>
+                <span class="LCCCrc">70</span>
+                <button class="LCCCru" onclick="like(this)">
+                    <span>&#128077;</span>
+                </button>
+            </div>
+        </div>
+        <div class="LCCCs">
+            <div class="LCCCsj">
+                <div class="LCCCn">
+                    Pen name <span class="LCCCnd">2 Day</span>
+                </div>
+            </div>
+            <div class="LCCCt">
+                I hate "Emma".<br>it's so BORING<br>I fell asleep at the first page.<br>It's great if you're into that
+                old 1800's kind of shit.
+            </div>
+
+            <div class="LCCCr">
+                <button class="LCCCrd" onclick="dislike(this)">
+                    <span>&#128078;</span>
+                </button>
+                <span class="LCCCrc">-30</span>
+                <button class="LCCCru" onclick="like(this)">
+                    <span>&#128077;</span>
+                </button>
+            </div>
+        </div>
+
+        <button class="btttn" onclick="window.location.href=window.location.href">Load more</button>
     </div>
 
 
