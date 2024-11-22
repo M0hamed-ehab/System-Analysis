@@ -130,7 +130,7 @@ h2,
 .removePost {
     font-weight: bold;
     color: red;
-    background-color: aliceblue;
+    background-color: transparent;
     border: 0;
 }
 
@@ -189,4 +189,25 @@ h2,
     font-weight: bold;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
+}
+
+
+#POPUP {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 150px;
+    max-width: 90%;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    text-transform: capitalize;
+    background: rgb(133, 208, 255);
+    border: 10px solid rgb(12, 133, 208);
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    transition: 1s;
+    display: none;
 }

@@ -46,7 +46,9 @@ function createPost() {
     var x = document.getElementById('POST').value;
 
     if (x.trim() == "") {
-        alert("Please write sth");
+        console.log("if");
+        popup();
+        console.log("return");
         return;
     }
 
@@ -90,6 +92,19 @@ function removePost(x) {
     y.remove();
 }
 
+
+
+function popup() {
+    const b = document.getElementById("POPUP");
+    b.style.display = "block";
+
+    console.log("popup");
+
+}
+function removePopup() {
+    const b = document.getElementById("POPUP");
+    b.style.display = "none";
+}
 
 
 //-------------------------------------------------------Mohamed part ending---------------------------------------------------------
