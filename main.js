@@ -94,13 +94,26 @@ function removePost(x) {
 
 
 
+function popupF(x) {
+    x.preventDefault();
+    const b = document.getElementById("POPUP");
+    b.style.display = "block";
+    document.getElementById('bname').value = '';
+    document.getElementById('auth_name').value = '';
+    document.getElementById('genre').value = '';
+
+    console.log("popup");
+
+}
 function popup() {
+
     const b = document.getElementById("POPUP");
     b.style.display = "block";
 
     console.log("popup");
 
 }
+
 function removePopup() {
     const b = document.getElementById("POPUP");
     b.style.display = "none";

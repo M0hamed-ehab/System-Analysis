@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html>
-<body>
 
-<form>
-<fieldset style="border-radius: 10px; max-width: 50%; margin:auto;">
-<legend style="text-align: center; font-size: 30px;">Request a Book</legend>
-<label for="bname">Book Name</label><br>
-<input type="text" id="bname" name="bname"><br>
-<label for="auth_name">Author Name</lable><br>
-<input type="text" id="auth_name" name="auth_name"><br>
-<label for="genre">Genre</label><br>
-<input type="text" id="genre" name="genre"><br>
-<br><br><input type="submit" name="submit" onclick="alert('Your request has been submited')">
-</fieldset>
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Library Requesting Page" />
+    <title>Request</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div id="POPUP">
+        <button class="removePost" style="position: absolute; top: 5px; right: 5px; color: white;"
+            onclick="removePopup()">x</button>
+        <div class="Popup-Post">Your request has been submited</div>
+    </div>
+
+    <form onsubmit="popupF(event)">
+        <fieldset style="border-radius: 10px; max-width: 50%; margin:auto;">
+            <legend style="text-align: center; font-size: 30px;">Request a Book</legend>
+            <label for="bname">Book Name</label><br>
+            <input type="text" id="bname" name="bname" required autocomplete="off"><br>
+            <label for="auth_name">Author Name</lable><br>
+                <input type="text" id="auth_name" name="auth_name" required autocomplete="off"><br>
+                <label for="genre">Genre</label><br>
+                <input type="text" id="genre" name="genre"><br>
+                <br><br><input type="submit" name="submit">
+        </fieldset>
+    </form>
 
 </body>
+
 </html>
