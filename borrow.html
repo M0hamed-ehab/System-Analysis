@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Library to borrow the book you like" />
+    <title>Borrowing Page</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+</head>
+
+<body class="LBB">
+    <div id="POPUP">
+        <button class="removePost" style="position: absolute; top: 5px; right: 5px; color: white;"
+            onclick="removePopup()">x</button>
+        <div class="Popup-Post">&#9888;PLEASE FILL IN ALL THE FIELDS&#9888;</div>
+    </div>
+
+
+    <div class="LBC">
+        <div class="LBCF">
+            <h2>Finalize Borrowing</h2>
+            <div class="LBCB">
+                <h3>Selected Book:</h3>
+                <p><strong>Title:</strong> <span id="selectedTitle"></span></p>
+                <p><strong>Author:</strong> <span id="selectedAuthor"></span></p>
+            </div>
+
+            <div class="LBAC">
+                <h3>Account Information</h3>
+                <div class="LBAIC">
+                    <div class="LBAICC">
+                        <input type="radio" id="savedAccount" name="accountChoice" value="saved" checked
+                            onchange="AccForm()">
+                        <label for="savedAccount">Use Saved Account</label>
+                    </div>
+                    <div class="LBAICC">
+                        <input type="radio" id="newAccount" name="accountChoice" value="new" onchange="AccForm()">
+                        <label for="newAccount">Use Different Details</label>
+                    </div>
+                </div>
+            </div>
+
+            <form id="borrowForm" onsubmit="confirmBorrowing(event)">
+                <div id="savedAccountForm">
+                    <div class="LBCFG">
+                        <label for="memberID">Library Card Number</label>
+                        <input type="text" id="memberID" value="0000000" readonly>
+                    </div>
+                    <div class="LBCFG">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" value="ooooo@email.com" readonly>
+                    </div>
+                </div>
+
+                <div id="newAccountForm" style="display: none;">
+                    <div class="LBCFG">
+                        <label for="newMemberID">Library Card Number</label>
+                        <input type="text" id="newMemberID" placeholder="Enter card number">
+                    </div>
+                    <div class="LBCFG">
+                        <label for="newEmail">Email</label>
+                        <input type="email" id="newEmail" placeholder="Enter email">
+                    </div>
+                </div>
+
+                <div class="LBDC">
+                    <h3>Delivery Method</h3>
+                    <div class="LBDCM" onclick="updateTotal()">
+                        <div class="LBDCC">
+                            <input type="radio" id="pickup" name="deliveryMethod" value="pickup" checked>
+                            <label for="pickup">
+
+                                <div class="LBDCD">
+                                    <strong>Library Pickup</strong>
+                                    <span>Available within 24 hours</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="LBDCC">
+                            <input type="radio" id="home" name="deliveryMethod" value="home">
+                            <label for="home">
+
+                                <div class="LBDCD">
+                                    <strong>Home Delivery</strong>
+                                    <span>2-3 business days</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="LBDCC">
+                            <input type="radio" id="locker" name="deliveryMethod" value="locker">
+                            <label for="locker">
+
+                                <div class="LBDCD">
+                                    <strong>Library Locker</strong>
+                                    <span>24/7 pickup available</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="LBDPS">
+                    <h3>Payment Method</h3>
+                    <div class="LBDPSM">
+                        <div class="LBDPSMC selected" onclick="selectPayment('S')" id="SBB">
+
+                            <div>
+                                <strong>Saved Card</strong>
+                                <div>**** **** **** 1234</div>
+                            </div>
+                        </div>
+                        <div class="LBDPSMC" onclick="selectPayment('N')" id="NBB">
+
+                            <div>
+                                <strong>New Card</strong>
+                                <div>Add new payment method</div>
+                            </div>
+                        </div>
+                        <div class="LBDPSMC" onclick="selectPayment('C')" id="CBB">
+
+                            <div>
+                                <strong>Pay on Delivery</strong>
+                                <div>Cash payment upon receipt</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="NCBB" class="LBDPSCD" style="display: none;">
+                        <div class="LBCFG">
+                            <label for="cardNumber">Card Number</label>
+                            <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000">
+                        </div>
+                        <div class="LBDPSCR">
+                            <div class="LBCFG">
+                                <label for="expiryDate">Expiry Date</label>
+                                <input type="text" id="expiry" placeholder="MM/YY">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="LBDTP">
+                    <h3>Order Summary</h3>
+                    <div id="orderSummary">
+                        <p>Book Borrowing Fee: $20.00</p>
+                        <p id="deliveryFee">Delivery Fee: $0.00</p>
+                        <p><strong>Total: <span id="totalAmount">$20.00</span></strong></p>
+                    </div>
+                </div>
+
+                <div class="LBCNP">
+                    <h3>Notification Preferences</h3>
+                    <div class="LBCNCB">
+                        <div>
+                            <input type="checkbox" id="emailN">
+                            <label for="emailN">Email notifications</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="smsN">
+                            <label for="smsN">SMS notifications</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="remN">
+                            <label for="remN">Due date reminders</label>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="LBDD">Due Date: <span> Next Monday</span></p>
+                <button type="submit" class="LBDDCB">Confirm Borrowing</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
