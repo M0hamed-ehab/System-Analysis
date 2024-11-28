@@ -1,0 +1,130 @@
+@import './reset.css';
+@import './variables.css';
+
+body {
+  font-family: Arial, sans-serif;
+  background: url('../../images/pexels-rafael-cosquiere-1059286-2041540.jpg');
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 10% auto;
+  padding: var(--spacing-md);
+}
+
+.headerl a {
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.headerl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) 0;
+  border-top: 2px solid #B8860B;
+  margin-bottom: var(--spacing-xl);
+}
+
+
+
+.view-cartt {
+  background-color: #B8860B;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.view-cartt:hover {
+  background-color: #9f750a;
+}
+
+.profile-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--spacing-xl);
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: var(--radius-full);
+  background-color: var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #DAA520;
+}
+
+.profile-picture-label {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--white);
+  padding: var(--spacing-xs);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.profile-info {
+  background-color: #fcfcfcb5;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.info-group {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: var(--spacing-sm);
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.info-group:last-child {
+  margin-bottom: 0;
+}
+
+.info-label {
+  color: var(--gray-700);
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.info-value {
+  color: var(--gray-900);
+  font-weight: 500;
+}
+
+.membership-badge {
+  display: inline-block;
+  background-color: #DAA520;
+  color: var(--white);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .profile-section {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-picture {
+    margin: 0 auto var(--spacing-lg);
+  }
+}

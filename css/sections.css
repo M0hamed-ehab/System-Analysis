@@ -33,15 +33,15 @@
 }
 
 .book-card:nth-child(1) .book-cover {
-    background-image: url('images/1.png');
+    background-image: url('../images/1.png');
 }
 
 .book-card:nth-child(2) .book-cover {
-    background-image: url('images/2.png');
+    background-image: url('../images/2.png');
 }
 
 .book-card:nth-child(3) .book-cover {
-    background-image: url('images/3.png');
+    background-image: url('../images/3.png');
 }
 
 .book-card h3 {

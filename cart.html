@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Library Requesting Page" />
-    <title>Request</title>
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="main.js"></script>
+    <title>Shopping Cart - Book Haven</title>
+    <link rel="stylesheet" href="src/styles/cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
@@ -28,25 +26,54 @@
             </ul>
         </nav>
     </header>
-    <div id="POPUP">
-        <button class="removePost" style="position: absolute; top: 5px; right: 5px; color: white;"
-            onclick="removePopup()">x</button>
-        <div class="Popup-Post">Your request has been submited</div>
+    <div class="cart-container">
+
+
+        <main>
+            <h1 style="margin-bottom: var(--spacing-lg)">Cart</h1>
+
+            <div class="cart-grid">
+                <div class="cart-items">
+                    <!-- Cart items will be dynamically inserted here -->
+                </div>
+
+                <div class="cart-summary">
+                    <h2 style="margin-bottom: var(--spacing-lg)">Summary</h2>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span data-summary="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax</span>
+                        <span data-summary="tax">$0.00</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span data-summary="total">$0.00</span>
+                    </div>
+                    <button class="checkout-btn" onclick="location.href='borrow.html'">
+                        Proceed
+                    </button>
+                </div>
+            </div>
+
+            <a href="/browse" class="continue-shopping">
+                <i class="fas fa-arrow-left"></i>
+                Return to Books
+            </a>
+        </main>
     </div>
 
-    <form onsubmit="popupF(event)" class="FC">
-        <fieldset style="border-radius: 10px; max-width: 50%; margin:auto;">
-            <legend style="text-align: center; font-size: 30px;">Request a Book</legend>
-            <label for="bname">Book Name</label><br>
-            <input type="text" id="bname" name="bname" required autocomplete="off"><br>
-            <label for="auth_name">Author Name</lable><br>
-                <input type="text" id="auth_name" name="auth_name" required autocomplete="off"><br>
-                <label for="genre">Genre</label><br>
-                <input type="text" id="genre" name="genre"><br>
-                <br><br><input type="submit" name="submit">
-        </fieldset>
-    </form>
+    <script type="module">
+        import { books } from './src/data/books.js';
+        import { CartManager } from './src/js/cart.js';
 
+        // Make books available globally for the CartManager
+        window.books = books;
+
+        // Initialize cart management
+        new CartManager();
+    </script>
     <footer>
         <div class="footer-content">
             <div class="footer-section">
