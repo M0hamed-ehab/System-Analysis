@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body{background-color:gray;}
+header {
+    position:sticky
+}
+.search-bar {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+.search-bar input {
+  width: 50%;
+  min-width: 300px;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 16px;
+  border: 0px;
+  outline: none;
+}
+li {border-style: solid; padding: 5px; margin: 5px;width: 250px;
+background-color:dodgerblue;}
+</style>
+<body>
+<h1>Find the book you want</h1>
+<header>
+<div class="search-bar">
+
+<input type="search"
+  id="search"
+  name="search"
+  placeholder="search.."
+  onkeyup="searchFunction()">
+
+</div>
+</header>
+<div class="book-list"
+<ul id="book-list">
+    <li><a href="#">book one</a></li>
+<li><a href="#">book two</a></li>
+<li><a href="#">book 3</a></li>
+
+
+</ul>
+<script>
+    function searchFunction(){
+        var input, filter, ul, li, a, i;
+  input = document.getElementById("search");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("book-list");
+  li = ul.getElementsByTagName("li");
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+    }
+</script>
+
+</body>
+
+</html>
