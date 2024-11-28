@@ -1,0 +1,74 @@
+/* Base styles and CSS reset */
+:root {
+    --primary-gold: #DAA520;
+    --secondary-gold: #B8860B;
+    --light-gold: #F7DC6F;
+    --dark-text: #2C3E50;
+    --light-text: #ECF0F1;
+    --background: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--background);
+}
+
+.section {
+    padding: 4rem 2rem;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--dark-text);
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-gold);
+    margin: 0.5rem auto;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 0.5rem;
+}
+
+.cta-button:first-child {
+    background-color: var(--primary-gold);
+    color: white;
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-gold);
+    color: var(--primary-gold);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(218, 165, 32, 0.3);
+}

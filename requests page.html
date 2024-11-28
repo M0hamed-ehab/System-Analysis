@@ -6,18 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Library Requesting Page" />
     <title>Request</title>
+    <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
 </head>
 
 <body>
+    <header>
+        <nav>
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo">Book Haven</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="#bookstore">Bookstore</a></li>
+                <li><a href="#library">Library</a></li>
+                <li><a href="commune.html">Community</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <div id="POPUP">
         <button class="removePost" style="position: absolute; top: 5px; right: 5px; color: white;"
             onclick="removePopup()">x</button>
         <div class="Popup-Post">Your request has been submited</div>
     </div>
 
-    <form onsubmit="popupF(event)">
+    <form onsubmit="popupF(event)" class="FC">
         <fieldset style="border-radius: 10px; max-width: 50%; margin:auto;">
             <legend style="text-align: center; font-size: 30px;">Request a Book</legend>
             <label for="bname">Book Name</label><br>

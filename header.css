@@ -1,3 +1,12 @@
+:root {
+    --primary-gold: #DAA520;
+    --secondary-gold: #B8860B;
+    --light-gold: #F7DC6F;
+    --dark-text: #2C3E50;
+    --light-text: #ECF0F1;
+    --background: #FFFFFF;
+}
+
 /* Header styles */
 header {
     background-color: white;
@@ -6,6 +15,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+
 }
 
 nav {
@@ -22,6 +32,7 @@ nav {
     font-weight: bold;
     color: var(--primary-gold);
     text-decoration: none;
+    font-family: 'PRISTINA', Arial, Helvetica, sans-serif;
 }
 
 .nav-links {
