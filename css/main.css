@@ -218,6 +218,7 @@ h3,
     transition: 1s;
     display: none;
     font-weight: 900;
+    z-index: 100000;
 }
 
 
@@ -226,7 +227,7 @@ h3,
 
 .LBC {
     max-width: 1200px;
-    margin: 2%;
+    margin: 4%;
     padding: 1%;
 }
 
@@ -335,7 +336,7 @@ h3,
 }
 
 .LBDCD strong {
-    color: rgb(37, 133, 223);
+    color: rgb(160, 160, 0);
     margin-bottom: 5%;
 }
 
