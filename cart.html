@@ -19,7 +19,7 @@
             <ul class="nav-links">
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#bookstore">Bookstore</a></li>
+                <li><a href="categories.html">Categories</a></li>
                 <li><a href="index.html#library">Library</a></li>
                 <li><a href="commune.html">Community</a></li>
                 <li><a href="Profile.html" class="view-cart"><i class="fas fa-user"></i></a></li>
@@ -34,22 +34,72 @@
 
             <div class="cart-grid">
                 <div class="cart-items">
-                    <!-- Cart items will be dynamically inserted here -->
+                    <div class="cart-item">
+                        <img src="images/57.jpg" alt="The New Yorker" class="book-cover">
+                        <div class="book-info">
+                            <div>
+                                <h3 class="book-title">The New Yorker</h3>
+                                <p class="book-author">Various Authors</p>
+                                <p class="book-format">Magazine</p>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn decrease">-</button>
+                                <input type="number" class="quantity" value="1" min="1">
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                        <div class="price">$13.99</div>
+                    </div>
+
+                    <div class="cart-item">
+                        <img src="images/11.jpg" alt="To Kill a Mockingbird" class="book-cover">
+                        <div class="book-info">
+                            <div>
+                                <h3 class="book-title">To Kill a Mockingbird</h3>
+                                <p class="book-author">Harper Lee</p>
+                                <p class="book-format">Fiction</p>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn decrease">-</button>
+                                <input type="number" class="quantity" value="1" min="1">
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                        <div class="price">$12.99</div>
+                    </div>
+
+                    <div class="cart-item">
+                        <img src="images/mickey6.jpg" alt="Mickey Book Title 6" class="book-cover">
+                        <div class="book-info">
+                            <div>
+                                <h3 class="book-title">Mickey</h3>
+                                <p class="book-format">Comic Book</p>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn decrease">-</button>
+                                <input type="number" class="quantity" value="1" min="1">
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                        <div class="price">$5.00</div>
+                    </div>
+
+
                 </div>
 
                 <div class="cart-summary">
                     <h2 style="margin-bottom: var(--spacing-lg)">Summary</h2>
                     <div class="summary-row">
                         <span>Subtotal</span>
-                        <span data-summary="subtotal">$0.00</span>
+                        <span data-summary="subtotal">$31.98</span>
                     </div>
                     <div class="summary-row">
                         <span>Tax</span>
-                        <span data-summary="tax">$0.00</span>
+                        <span data-summary="tax">$2.80</span>
                     </div>
                     <div class="summary-total">
                         <span>Total</span>
-                        <span data-summary="total">$0.00</span>
+                        <span data-summary="total">$34.78</span>
                     </div>
                     <button class="checkout-btn" onclick="location.href='borrow.html'">
                         Proceed
@@ -57,9 +107,9 @@
                 </div>
             </div>
 
-            <a href="/browse" class="continue-shopping">
+            <a href="categories.html" class="continue-shopping">
                 <i class="fas fa-arrow-left"></i>
-                Return to Books
+                Return to Categories
             </a>
         </main>
     </div>
@@ -100,8 +150,7 @@
             <div class="footer-section">
                 <h3>Additional Pages</h3>
 
-                <p><a href="borrow.html" aria-label="borrow" style="text-decoration: none; color: white;">Borrowing</a>
-                </p>
+
                 <p><a href="requests page.html" aria-label="request"
                         style="text-decoration: none; color: white;">Request</a></p>
                 <a href="#" aria-label="Instagram"></a>

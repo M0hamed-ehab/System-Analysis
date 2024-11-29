@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Categories</title>
+    <link rel="stylesheet" href="css/categories.css">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <div id="POPUP">
+        <button class="removePost" style="position: absolute; top: 5px; right: 5px; color: white;"
+            onclick="removePopup()">x</button>
+        <div class="Popup-Post">Added to Cart successfully</div>
+    </div>
+
+    <header>
+        <nav>
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo">Book Haven</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="index.html#library">Library</a></li>
+                <li><a href="commune.html">Community</a></li>
+                <li><a href="Profile.html" class="view-cart"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="categories-nav">
+        <div class="category-link" data-category="Fiction">Fiction</div>
+        <div class="category-link" data-category="Non-Fiction">Non-Fiction</div>
+        <div class="category-link" data-category="Children'sandYoungAdult">Children's and Young Adult</div>
+        <div class="category-link" data-category="Academic">Academic</div>
+        <div class="category-link" data-category="ReferenceMaterials">Reference Materials</div>
+        <div class="category-link" data-category="Magazines">Magazines</div>
+        <div class="category-link" data-category="Comics">Comic Books</div>
+    </div>
+
+    <main>
+
+
+
+
+
+        <section id="Fiction" class="category active">
+            <div class="category-header">
+                <h2>Fiction</h2>
+                <p class="category-description">Dive into imagined worlds with thrilling tales, epic adventures, and
+                    unforgettable characters.</p>
+            </div>
+            <div class="books-grid">
+                <div class="book-item">
+                    <img src="images/11.jpg" alt="To Kill a Mockingbird">
+                    <h3>To Kill a Mockingbird</h3>
+                    <h4>Harper Lee</h4>
+                    <p>A timeless story about race and justice in the Deep South, told through the eyes of a young girl.
+                    </p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$12.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/12.jpg" alt="1984">
+                    <h3>1984</h3>
+                    <h4>George Orwell</h4>
+                    <p>A dystopian novel exploring a totalitarian regime’s control over truth and freedom.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$14.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/13.jpg" alt="The Great Gatsby">
+                    <h3>The Great Gatsby</h3>
+                    <h4>F. Scott Fitzgerald</h4>
+                    <p>A tragic tale of love, wealth, and the American Dream in the Jazz Age.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$13.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/14.jpg" alt="Harry Potter and the Sorcerer's Stone">
+                    <h3>Harry Potter and the Sorcerer's Stone</h3>
+                    <h4>J.K. Rowling</h4>
+                    <p>A boy discovers he’s a wizard and begins his magical adventures at Hogwarts.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$22.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/15.jpg" alt="Pride and Prejudice">
+                    <h3>Pride and Prejudice</h3>
+                    <h4>Jane Austen</h4>
+                    <p>A witty romance highlighting class and first impressions in Regency England.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$14.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/16.jpg" alt="The Lord of the Rings">
+                    <h3>The Lord of the Rings</h3>
+                    <h4>J.R.R. Tolkien</h4>
+                    <p>A quest to destroy a powerful ring and save Middle-earth from darkness.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$29.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/17.jpg" alt="The Catcher in the Rye">
+                    <h3>The Catcher in the Rye</h3>
+                    <h4>J.D. Salinger</h4>
+                    <p>A teenager’s raw and emotional journey of rebellion and self-discovery.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$14.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/18.jpg" alt="Dune">
+                    <h3>Dune</h3>
+                    <h4>Frank Herbert</h4>
+                    <p>A sci-fi epic about power, survival, and destiny on a desert planet.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$19.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/19.jpg" alt="The Hunger Games">
+                    <h3>The Hunger Games</h3>
+                    <h4>Suzanne Collins</h4>
+                    <p>A dystopian saga of survival and rebellion against a corrupt regime.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$14.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/20.jpg" alt="The Fault in Our Stars">
+                    <h3>The Fault in Our Stars</h3>
+                    <h4>John Green</h4>
+                    <p>A poignant love story between two teenagers facing terminal illness.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$12.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section id="Non-Fiction" class="category active">
+            <div class="category-header">
+                <h2>Non-Fiction</h2>
+                <p class="category-description">Unlock real-world insights, from history’s greatest moments to the
+                    secrets of success.</p>
+            </div>
+            <div class="books-grid">
+                <div class="book-item">
+                    <img src="images/21.jpg" alt="Sapiens: A Brief History of Humankind">
+                    <h3>Sapiens: A Brief History of Humankind</h3>
+                    <h4>Yuval Noah Harari</h4>
+                    <p>A thought-provoking journey through the history of humanity, from the Stone Age to modern times.
+                    </p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$18.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/22.jpg" alt="Educated">
+                    <h3>Educated</h3>
+                    <h4>Tara Westover</h4>
+                    <p>A powerful memoir about a woman’s struggle for education and self-discovery, against the backdrop
+                        of a strict, isolated upbringing.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$16.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/23.jpg" alt="Becoming">
+                    <h3>Becoming</h3>
+                    <h4>Michelle Obama</h4>
+                    <p>The inspiring memoir of former First Lady Michelle Obama, charting her journey from Chicago to
+                        the White House and beyond.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$19.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/24.jpg" alt="The Immortal Life of Henrietta Lacks">
+                    <h3>The Immortal Life of Henrietta Lacks</h3>
+                    <h4>Rebecca Skloot</h4>
+                    <p>A fascinating look at the life of Henrietta Lacks, whose cells revolutionized science, and the
+                        ethical questions surrounding her legacy.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$15.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/25.jpg" alt="Quiet: The Power of Introverts in a World That Can't Stop Talking">
+                    <h3>Quiet: The Power of Introverts in a World That Can't Stop Talking</h3>
+                    <h4>Susan Cain</h4>
+                    <p>An exploration of the introverted personality and its power in a world that tends to favor
+                        extroversion.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$17.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/26.jpg" alt="The Wright Brothers">
+                    <h3>The Wright Brothers</h3>
+                    <h4>David McCullough</h4>
+                    <p>The riveting biography of the two men who invented the airplane and changed the course of
+                        history.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$21.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/27.jpg" alt="The Body: A Guide for Occupants">
+                    <h3>The Body: A Guide for Occupants</h3>
+                    <h4>Bill Bryson</h4>
+                    <p>A captivating and humorous exploration of the human body and how it works.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$22.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/28.jpg" alt="The Power of Habit">
+                    <h3>The Power of Habit</h3>
+                    <h4>Charles Duhigg</h4>
+                    <p>An exploration of the science behind habits and how to harness them to improve our lives.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$18.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/29.jpg" alt="Outliers: The Story of Success">
+                    <h3>Outliers: The Story of Success</h3>
+                    <h4>Malcolm Gladwell</h4>
+                    <p>A deep dive into the factors that contribute to success, beyond innate talent, showing how
+                        culture, timing, and opportunities shape our lives.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$16.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section id="Children'sandYoungAdult" class="category">
+            <div class="category-header">
+                <h2>Children's and Young Adult</h2>
+                <p class="category-description">Magical stories and coming-of-age journeys for the young and young at
+                    heart.</p>
+            </div>
+            <div class="books-grid">
+                <div class="book-item">
+                    <img src="images/31.jpg" alt="Matilda">
+                    <h3>Matilda</h3>
+                    <h4>Roald Dahl</h4>
+                    <p>A young girl with extraordinary intelligence and telekinetic powers takes on her cruel
+                        headmistress and discovers the love of learning.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$10.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/32.jpg" alt="Charlotte's Web">
+                    <h3>Charlotte's Web</h3>
+                    <h4>E.B. White</h4>
+                    <p>The heartwarming story of a pig named Wilbur and his friendship with a clever spider named
+                        Charlotte, who saves his life.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$8.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/33.jpg" alt="Percy Jackson and the Olympians: The Lightning Thief">
+                    <h3>Percy Jackson and the Olympians: The Lightning Thief</h3>
+                    <h4>Rick Riordan</h4>
+                    <p>A young boy discovers that he is the son of Poseidon and embarks on an adventurous journey to
+                        prevent a war among the gods.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$12.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/34.jpg" alt="The Chronicles of Narnia: The Lion, the Witch, and the Wardrobe">
+                    <h3>The Chronicles of Narnia: The Lion, the Witch, and the Wardrobe</h3>
+                    <h4>C.S. Lewis</h4>
+                    <p>A magical tale of four siblings who enter a fantastical world called Narnia, where they must help
+                        defeat the White Witch and her evil rule.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$11.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/35.jpg" alt="The Hobbit">
+                    <h3>The Hobbit</h3>
+                    <h4>J.R.R. Tolkien</h4>
+                    <p>Join Bilbo Baggins on his journey to reclaim treasure guarded by the dragon Smaug in this fantasy
+                        classic.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$13.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/36.jpg" alt="Wonder">
+                    <h3>Wonder</h3>
+                    <h4>R.J. Palacio</h4>
+                    <p>The inspiring story of a young boy with a facial deformity as he navigates the challenges of
+                        school and friendship.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$9.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/37.jpg" alt="The Maze Runner">
+                    <h3>The Maze Runner</h3>
+                    <h4>James Dashner</h4>
+                    <p>A young boy wakes up in a maze with no memory of his past and must work with others to escape
+                        before time runs out.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$12.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/38.jpg" alt="The Giver">
+                    <h3>The Giver</h3>
+                    <h4>Lois Lowry</h4>
+                    <p>A dystopian novel about a boy chosen to receive memories of the past in a society that has erased
+                        emotions and choices.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i> <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$10.49</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/39.jpg" alt="Anne of Green Gables">
+                    <h3>Anne of Green Gables</h3>
+                    <h4>L.M. Montgomery</h4>
+                    <p>The adventures of Anne Shirley, a fiery and imaginative orphan, as she finds her place in the
+                        small town of Avonlea.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$7.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/40.jpg" alt="Alice's Adventures in Wonderland">
+                    <h3>Alice's Adventures in Wonderland</h3>
+                    <h4>Lewis Carroll</h4>
+                    <p>A fantastical journey through Wonderland with Alice as she encounters strange creatures and
+                        absurd adventures.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$6.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/41.jpg" alt="The Secret Garden">
+                    <h3>The Secret Garden</h3>
+                    <h4>Frances Hodgson Burnett</h4>
+                    <p>A magical tale of a young girl who discovers a hidden garden and brings it back to life,
+                        transforming herself and others.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$8.49</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/42.jpg" alt="The Wind in the Willows">
+                    <h3>The Wind in the Willows</h3>
+                    <h4>Kenneth Grahame</h4>
+                    <p>The delightful adventures of Mole, Ratty, Badger, and Toad in the English countryside.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$9.49</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section id="Academic" class="category">
+            <div class="category-header">
+                <h2>Academic</h2>
+                <p class="category-description">The powerhouse of knowledge: where scholars and curious minds meet.</p>
+            </div>
+            <div class="books-grid">
+                <div class="book-item">
+                    <img src="images/43.jpg" alt="Campbell Biology">
+                    <h3>Campbell Biology</h3>
+                    <h4>Neil A. Campbell, Jane B. Reece</h4>
+                    <p>A comprehensive textbook for understanding biology’s principles and processes, perfect for
+                        students and professionals alike.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$129.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/44.jpg" alt="Introduction to Algorithms">
+                    <h3>Introduction to Algorithms</h3>
+                    <h4>Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein</h4>
+                    <p>A foundational guide to algorithm design and analysis, crucial for anyone studying computer
+                        science or engineering.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$79.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/45.jpg" alt="Theoretical Physics">
+                    <h3>Theoretical Physics</h3>
+                    <h4>H.J. M. H. H. Saha</h4>
+                    <p>A deep dive into advanced physics concepts, exploring everything from quantum mechanics to
+                        general relativity and cosmology.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$89.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/46.jpg" alt="Economics">
+                    <h3>Economics</h3>
+                    <h4>Paul A. Samuelson, William D. Nordhaus</h4>
+                    <p>An essential guide to microeconomics and macroeconomics principles, offering valuable insights
+                        into market forces and economic behavior.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$69.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/47.jpg" alt="Modern Operating Systems">
+                    <h3>Modern Operating Systems</h3>
+                    <h4>Andrew S. Tanenbaum</h4>
+                    <p>Insights into operating system design and function, with a focus on modern architecture,
+                        including security and performance optimization.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$74.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/48.jpg" alt="Calculus">
+                    <h3>Calculus</h3>
+                    <h4>James Stewart</h4>
+                    <p>A detailed explanation of calculus for students and professionals, from the basics to more
+                        complex topics like multivariable calculus.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$109.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section id="ReferenceMaterials" class="category">
+            <div class="category-header">
+                <h2>Reference Materials</h2>
+                <p class="category-description">Your go-to toolkit for quick answers and fascinating facts.</p>
+            </div>
+            <div class="books-grid">
+                <div class="book-item">
+                    <img src="images/49.jpg" alt="Oxford English Dictionary">
+                    <h3>Oxford English Dictionary</h3>
+                    <h4>Oxford University Press</h4>
+                    <p>The definitive dictionary of the English language, offering precise definitions and historical
+                        word origins.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$199.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/50.jpg" alt="Roget’s Thesaurus">
+                    <h3>Roget’s Thesaurus</h3>
+                    <h4>Peter Mark Roget</h4>
+                    <p>The classic reference book for finding synonyms, antonyms, and related words, indispensable for
+                        writing and word choice.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$14.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/51.jpg" alt="The World Almanac and Book of Facts">
+                    <h3>The World Almanac and Book of Facts</h3>
+                    <h4>Sarah Janssen</h4>
+                    <p>An annual compendium of facts, statistics, and world events, covering everything from history to
+                        current affairs.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$24.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/52.jpg" alt="Gray’s Anatomy">
+                    <h3>Gray’s Anatomy</h3>
+                    <h4>Henry Gray</h4>
+                    <p>The definitive and comprehensive guide to human anatomy, used by medical students and
+                        professionals around the world.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$179.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/53.jpg" alt="Atlas of World History">
+                    <h3>Atlas of World History</h3>
+                    <h4>Patrick K. O'Brien</h4>
+                    <p>A comprehensive and visually stunning guide to world history, with detailed maps and timelines of
+                        key events.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$39.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/54.jpg" alt="Merriam-Webster's Collegiate Dictionary">
+                    <h3>Merriam-Webster's Collegiate Dictionary</h3>
+                    <h4>Merriam-Webster</h4>
+                    <p>The trusted dictionary for definitions, word usage, and pronunciation, widely used in schools and
+                        libraries.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$27.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/55.jpg" alt="Guinness World Records">
+                    <h3>Guinness World Records</h3>
+                    <h4>Guinness World Records</h4>
+                    <p>The ultimate source for fascinating records, feats, and achievements from around the world,
+                        updated annually.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$35.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section id="Magazines" class="category">
+            <div class="category-header">
+                <h2>Magazines</h2>
+                <p class="category-description">Stay in the loop with the latest in trends, tech, and culture.</p>
+            </div>
+            <div class="books-grid">
+                <div class="book-item">
+                    <img src="images/56.jpg" alt="National Geographic">
+                    <h3>National Geographic</h3>
+                    <h4>National Geographic Society</h4>
+                    <p>Stunning visuals and stories about our planet, offering in-depth articles on geography, nature,
+                        and science.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$29.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/57.jpg" alt="The New Yorker">
+                    <h3>The New Yorker</h3>
+                    <h4>Various Authors</h4>
+                    <p>Essays, cartoons, and commentary on culture and current events, featuring insightful reporting
+                        and creative works.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$13.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/58.jpg" alt="Time Magazine">
+                    <h3>Time Magazine</h3>
+                    <h4>Time Inc.</h4>
+                    <p>Weekly coverage of global news and issues, offering in-depth analysis and perspectives on current
+                        affairs.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$19.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/59.jpg" alt="Scientific American">
+                    <h3>Scientific American</h3>
+                    <h4>Scientific American</h4>
+                    <p>Breakthroughs in science and technology, offering insights into new discoveries and the latest
+                        research in various fields.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$59.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/60.jpg" alt="Vogue">
+                    <h3>Vogue</h3>
+                    <h4>Vogue Magazine</h4>
+                    <p>Fashion trends and industry insights, offering expert opinions on style, beauty, and design from
+                        the world's top designers.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$29.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/61.jpg" alt="Forbes">
+                    <h3>Forbes</h3>
+                    <h4>Forbes Media</h4>
+                    <p>Business, finance, and entrepreneurship stories, covering the latest trends and influential
+                        leaders shaping the global economy.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$39.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+                <div class="book-item">
+                    <img src="images/62.jpg" alt="Popular Mechanics">
+                    <h3>Popular Mechanics</h3>
+                    <h4>Popular Mechanics Magazine</h4>
+                    <p>Technology, science, and DIY enthusiasts’ go-to guide, offering practical advice and the latest
+                        innovations in various fields.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$29.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+        <section id="Comics" class="category">
+            <div class="category-header">
+                <h2>Comic Books</h2>
+                <p class="category-description">Step into vibrant worlds filled with action, humor, and unforgettable
+                    characters. From superheroes to manga, these graphic stories bring imagination to life in every
+                    panel.</p>
+            </div>
+            <div class="books-grid">
+                <div class="book-item">
+                    <img src="images/marvel1.jpg" alt="Marvel Book Title 1">
+                    <h3>Avengers</h3>
+                    <p>Discover the origin story of your favorite superhero.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="price">Price: <span>$10</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/marvel2.jpg" alt="Marvel Book Title 2">
+                    <h3>Captain America</h3>
+                    <p>The ultimate showdown between two iconic heroes.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$14</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/marvel3.jpg" alt="Marvel Book Title 3">
+                    <h3>Daredevil</h3>
+                    <p>A thrilling adventure through time and space.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$9</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/marvel4.jpg" alt="Marvel Book Title 4">
+                    <h3>Iron man</h3>
+                    <p>The rise of a new villain and the battle for the universe.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$20</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/marvel5.png" alt="Marvel Book Title 5">
+                    <h3>Deadpool</h3>
+                    <p>Experience the heroes’ struggles against a powerful adversary.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$22</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/marvel6.jpg" alt="Marvel Book Title 6">
+                    <h3>Hulk</h3>
+                    <p>The thrilling conclusion to a saga of epic proportions.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$19</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/marvel7.jpg" alt="Marvel Book Title 7">
+                    <h3>Spiderman</h3>
+                    <p>Unmask the secrets of a beloved character's past.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$26</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/marvel8.jpg" alt="Marvel Book Title 8">
+                    <h3>Wolverine</h3>
+                    <p>Witness the extraordinary clash of two powerful forces.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$20</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/marvel9.jpg" alt="Marvel Book Title 9">
+                    <h3>Spider miles</h3>
+                    <p>A team-up of superheroes to save the world from an unknown threat.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$13</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/mickey1.jpg" alt="Mickey Book Title 1">
+                    <h3>Mickey magazine - 3499</h3>
+                    <p>Mickey and friends take on a new fantastical quest.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$3</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/mickey2.jpg" alt="Mickey Book Title 2">
+                    <h3>Mickey magazine - 3300</h3>
+                    <p>Explore a world where magic and technology collide.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$2</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/mickey3.jpg" alt="Mickey Book Title 3">
+                    <h3>Mickey magazine - 0711</h3>
+                    <p>A heartwarming tale of friendship and adventure.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$1</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/mickey4.jpg" alt="Mickey Book Title 4">
+                    <h3>Mickey magazine - 999</h3>
+                    <p>The quest for a lost artifact in an enchanted world.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$0.6</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/mickey5.jpg" alt="Mickey Book Title 5">
+                    <h3>Mickey magazine - 1570</h3>
+                    <p>Join Mickey on a space exploration mission like no other!</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$1.20</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/mickey6.jpg" alt="Mickey Book Title 6">
+                    <h3>Mickey magazine - 2000</h3>
+                    <p>Venture into a world of dreams and possibilities.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$5</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/mickey7.jpg" alt="Mickey Book Title 7">
+                    <h3>Mickey magazine - 1099</h3>
+                    <p>A thrilling tale of adventure with Mickey and friends.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$1</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/mickey8.jpg" alt="Mickey Book Title 8">
+                    <h3>Mickey magazine - 1065</h3>
+                    <p>The magic of friendship and wonder unfolds.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$0.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+                <div class="book-item">
+                    <img src="images/mickey9.jpg" alt="Mickey Book Title 9">
+                    <h3>Mickey magazine - 1060</h3>
+                    <p>Embark on a fantastic journey to a world beyond imagination.</p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+                    <p class="price">Price: <span>$1.99</span></p>
+                    <br>
+                    <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+                    <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>123 Reading Street</p>
+                    <p>Booktown, BT 12345</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Monday - Friday: 9AM - 8PM</p>
+                    <p>Saturday: 10AM - 6PM</p>
+                    <p>Sunday: 12PM - 5PM</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Additional Pages</h3>
+
+
+                    <p><a href="requests page.html" aria-label="request"
+                            style="text-decoration: none; color: white;">Request</a></p>
+                    <a href="#" aria-label="Instagram"></a>
+                    <a href="#" aria-label="LinkedIn"></a>
+
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Book Haven. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <script src="categories.js"></script>
+</body>
+
+</html>

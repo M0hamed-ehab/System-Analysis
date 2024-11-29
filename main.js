@@ -166,7 +166,7 @@ function updateTotal() {
     const X = document.querySelector('input[name="deliveryMethod"]:checked').value;
     const F = X === 'home' ? 2.00 : (X == "locker" ? 5.00 : 0.00);
     document.getElementById('deliveryFee').textContent = `Delivery Fee: $${F.toFixed(2)}`;
-    document.getElementById('totalAmount').textContent = `$${(20 + F).toFixed(2)}`;
+    document.getElementById('totalAmount').textContent = `$${(27.99 + F).toFixed(2)}`;
 }
 
 

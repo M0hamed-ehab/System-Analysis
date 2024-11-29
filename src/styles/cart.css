@@ -76,7 +76,7 @@ body {
 }
 
 .quantity-btn {
-  background-color: var(--gray-100);
+  background-color: #F7DC6F;
   border: none;
   width: 24px;
   height: 24px;
@@ -89,7 +89,7 @@ body {
 }
 
 .quantity-btn:hover {
-  background-color: var(--gray-200);
+  background-color: #e2c554;
 }
 
 .quantity {
