@@ -1,5 +1,5 @@
 // Cart management functionality
-export class CartManager {
+/*export class CartManager {
   constructor() {
     this.loadCart();
     this.bindEvents();
@@ -99,4 +99,4 @@ export class CartManager {
       this.updateQuantity(bookId, newQuantity - currentQuantity);
     });
   }
-}
+}*/
