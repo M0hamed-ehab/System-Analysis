@@ -21,10 +21,10 @@
             <ul class="nav-links">
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#bookstore">Bookstore</a></li>
+                <li><a href="categories.html">Categories</a></li>
                 <li><a href="index.html#library">Library</a></li>
                 <li><a href="commune.html">Community</a></li>
-                <li><a href="Profile.html" class="view-cart"><i class="fas fa-user"></i></a></li>
+                <li><a href="#" id="profile-link" class="view-cart"><i class="fas fa-user"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -39,9 +39,9 @@
         <div class="LBCF">
             <h2>Finalize Borrowing</h2>
             <div class="LBCB">
-                <h3>Selected Book:</h3>
-                <p><strong>Title:</strong> <span id="selectedTitle"></span></p>
-                <p><strong>Author:</strong> <span id="selectedAuthor"></span></p>
+                <h3>Selected Books: 1</h3>
+                <p><strong>Title: Merriam-Webster's Collegiate Dictionary</strong> <span id="selectedTitle"></span></p>
+                <p><strong>Author: Merriam-Webster</strong> <span id="selectedAuthor"></span></p>
             </div>
 
             <div class="LBAC">
@@ -163,9 +163,9 @@
                 <div class="LBDTP">
                     <h3>Order Summary</h3>
                     <div id="orderSummary">
-                        <p>Book Borrowing Fee: $20.00</p>
+                        <p>Book Borrowing Fee: $27.99</p>
                         <p id="deliveryFee">Delivery Fee: $0.00</p>
-                        <p><strong>Total: <span id="totalAmount">$20.00</span></strong></p>
+                        <p><strong>Total: <span id="totalAmount">$27.99</span></strong></p>
                     </div>
                 </div>
 
@@ -222,8 +222,9 @@
             <div class="footer-section">
                 <h3>Additional Pages</h3>
 
-                <p><a href="borrow.html" aria-label="borrow" style="text-decoration: none; color: white;">Borrowing</a>
-                </p>
+
+                <p><a href="subscribe.html" aria-label="Subscription"
+                        style="text-decoration: none; color: white;">Subscription</a></p>
                 <p><a href="requests page.html" aria-label="request"
                         style="text-decoration: none; color: white;">Request</a></p>
                 <a href="#" aria-label="Instagram"></a>
@@ -235,6 +236,7 @@
             <p>&copy; 2024 Book Haven. All rights reserved.</p>
         </div>
     </footer>
+    <script src="login.js"></script>
 </body>
 
 </html>

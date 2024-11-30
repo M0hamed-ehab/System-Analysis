@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/header.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="POPUP">
+        <button class="removePost"
+            style="position: absolute; top: 5px; right: 5px; width: fit-content; padding: 1%; color: white;"
+            onclick="removePopup()">x</button>
+        <div class="Popup-Post" id="POPUP-P"></div>
+    </div>
+    <header>
+        <nav>
+            <a href="index.html" style="text-decoration: none;">
+                <div class="logo">Book Haven</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="index.html#library">Library</a></li>
+                <li><a href="commune.html">Community</a></li>
+                <li><a href="#" id="profile-link" class="view-cart"><i class="fas fa-user"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 id="form-title">Login</h2>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Email" required />
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Password" required />
+                <span id="toggle-password">👁️</span>
+            </div>
+            <div id="register-fields" style="display: none;">
+                <input type="text" id="first-name" placeholder="First Name" />
+                <input type="text" id="last-name" placeholder="Last Name" />
+                <div class="password-container">
+                    <input type="password" id="confirm-password" placeholder="Confirm Password" />
+                    <span id="toggle-confirm-password">👁️</span>
+                </div>
+            </div>
+            <button type="button" id="submit-button">Login</button>
+        </form>
+        <div class="toggle">
+            <span id="toggle-text">Don't have an account? </span>
+            <a href="#" id="toggle-link">Register</a>
+        </div>
+        <div id="success-message"></div>
+    </div>
+    <script src="login.js"></script>
+
+
+</body>
+
+</html>
