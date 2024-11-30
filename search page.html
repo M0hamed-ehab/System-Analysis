@@ -1,181 +1,1555 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Library Requesting Page" />
+  <title>Request</title>
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="main.js"></script>
+  <script src="login.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
 <style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+
+  }
+
+  .btn {
+    transition: background-color 200ms, color 200ms;
+    background-color: transparent;
+    font: inherit;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 8px;
+    color: #717171;
+    border: 1px solid #9b9b9b;
+    border-radius: 25px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .search-bar input {
+    width: 50%;
+    min-width: 300px;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+  }
+
+  .book-info {
+    position: absolute;
+    top: 25%;
+    left: 6.5%;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .filterDiv.active .book-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .book-info h3,
+  .book-info h4,
+  .book-info p {
+    margin: 5px 0;
+  }
+
+  /* Style the buttons */
+  .add-to-cart {
+    margin: 10px 0;
+    padding: 8px 16px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+
+  .add-to-cart:hover {
+    background-color: #666;
+    color: #fff;
+  }
+
+  .filterDiv .book-info {
+    display: none;
+  }
 
 
-.btn { transition: background-color 200ms, color 200ms;
-  background-color: transparent;
-  font: inherit;
-  cursor: pointer;
-  display: inline-block;
-  padding: 0 8px;
-  color: #717171;
-  border: 1px solid #9b9b9b;
-  border-radius: 25px;
-  font-size: 14px;
-  white-space: nowrap;
-}
 
-.search-bar input {
-  width: 50%;
-  min-width: 300px;
-  padding: 12px 24px;
-  border-radius: 24px;
-  font-size: 16px;
-  border: 0px;
-  outline: none;
-}
+  .filterDiv {
+    flex: 1 1 calc(33.33% - 20px);
+    box-sizing: border-box;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    width: 307px;
+    height: 500px;
+    border-radius: 8px;
+    margin: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+  }
 
-body{background-color:gray;}
+  .book-item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    width: 307px;
+    height: 500px;
+    border-radius: 8px;
+    margin: 10px;
+    overflow: hidden;
+  }
 
-.filterDiv {
-  float: left;
-  background-color: #2196F3;
-  color: #ffffff;
-  width: 100px;
-  line-height: 100px;
-  text-align: center;
-  margin: 2px;
-  display: none;
-}
 
-.show {
-  display: block;
-}
 
-.container {
-  margin-top: 20px;
-  overflow: hidden;
-}
+  .filterDiv.active {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 1000;
+  }
 
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-  margin-top: 20px;
-}
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+  }
 
-.btn:hover {
-  background-color: #ddd;
-}
 
-.btn.active {
-  background-color: #666;
-  color: white;
-}
+
+  .rating {
+    margin-bottom: 10px;
+  }
+
+  .add-to-cart {
+    margin: 10px 5px;
+    padding: 8px 16px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+
+  .add-to-cart:hover {
+    background-color: #666;
+    color: #fff;
+  }
+
+  .rating {
+    position: relative;
+    transform: translate(0px, 450px);
+    z-index: 2;
+    padding: 20px 10px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .show {
+    display: block;
+  }
+
+  .container {
+    margin-top: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  .btn:hover {
+    background-color: #ddd;
+  }
+
+  .btn.active {
+    background-color: #666;
+    color: white;
+  }
+
+  #book-list {
+    list-style-type: none;
+    position: relative;
+    margin-bottom: 10px;
+  }
 </style>
+
 <body>
-    <h1>Find the book you want</h1>
-    <header>
+  <div id="POPUP">
+    <button class="removePost" style="position: absolute; top: 5px; right: 5px; color: white;"
+      onclick="removePopup()">x</button>
+    <div class="Popup-Post">Added to Cart successfully</div>
+  </div>
+  <header>
+    <nav>
+      <a href="index.html" style="text-decoration: none;">
+        <div class="logo">Book Haven</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#library">Library</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="commune.html">Community</a></li>
+        <li><a href="search page.html"><i class="fa-solid fa-magnifying-glass"></i> Search</a></li>
+        <li><a href="#" id="profile-link" class="view-cart"><i class="fas fa-user"></i> Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div style="margin: 2%; padding: 2%;">
+    <h1 style="margin-top: 8%;">Search library</h1>
     <div class="search-bar">
-    
-    <input type="search"
-      id="search"
-      name="search"
-      placeholder="search.."
-      onkeyup="searchFunction()">
-    
+
+      <input type="search" id="search" name="search" placeholder="search.." onkeyup="searchFunction()">
+
     </div>
-    </header>
 
 
-<div id="btn-container">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('comedy')"> Comedy</button>
-  <button class="btn" onclick="filterSelection('fiction')"> fiction</button>
-  <button class="btn" onclick="filterSelection('non-fiction')"> Non-fiction</button>
-  <button class="btn" onclick="filterSelection('drama')"> Drama</button>
-  <button class="btn" onclick="filterSelection('romance')"> Romance</button>
-  <button class="btn" onclick="filterSelection('mystery')"> Mystery</button>
-<button class="btn" onclick="filterSelection('horror')"> Horror</button>
-<button class="btn" onclick="filterSelection('fantasy')">Fantasy</button>
+    <div id="btn-container">
+      <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+      <button class="btn" onclick="filterSelection('comedy')"> Comedy</button>
+      <button class="btn" onclick="filterSelection('fiction')"> fiction</button>
+      <button class="btn" onclick="filterSelection('non-fiction')"> Non-fiction</button>
+      <button class="btn" onclick="filterSelection('drama')"> Drama</button>
+      <button class="btn" onclick="filterSelection('romance')"> Romance</button>
+      <button class="btn" onclick="filterSelection('mystery')"> Mystery</button>
+      <button class="btn" onclick="filterSelection('horror')"> Horror</button>
+      <button class="btn" onclick="filterSelection('fantasy')">Fantasy</button>
 
-</div>
-<div id="book-list">
-<div class="container">
-  <div class="filterDiv romance"><li><a href="#">book 1</a></div>
-  <div class="filterDiv fiction"><li><a href="#">book 2</a></div>
-  <div class="filterDiv comedy"><li><a href="#">book 3</a></div>
-  <div class="filterDiv comedy"><li><a href="#">book 4</a></div>
-  <div class="filterDiv fiction"><li><a href="#">book 5</a></div>
-  <div class="filterDiv mystery"><li><a href="#">book6</a></div>
-  <div class="filterDiv horror"><li><a href="#">book 7</a></div>
-  <div class="filterDiv non-fiction"><li><a href="#">book 8</a></div>
-  <div class="filterDiv drama"><li><a href="#">book 9</a></div>
-  <div class="filterDiv fiction"><li><a href="#">book 10</a></div>
-  <div class="filterDiv romance"><li><a href="#">book 11</a></div>
-  <div class="filterDiv comedy"><li><a href="#">book 12</a></div>
-  <div class="filterDiv fiction"><li><a href="#"> book 13</a></div>
-  <div class="filterDiv mystery"><li><a href="#">book 14</a></li></div>
-  <div class="filterDiv romance"><li><a href="#">book 15</a></li></div>
-  <div class="filterDiv romance"><li><a href="#">book 16</a></li></div>
-</div>
-</div>
-<script>
+    </div>
+    <div id="book-list">
+      <div class="container">
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/11.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>To Kill a Mockingbird</h3>
+              <h4>Harper Lee</h4>
+              <p>A timeless story about race and justice in the Deep South, told through the eyes of a young girl.
+              </p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
 
-function searchFunction(){
-        var input, filter, ul, li, a, i;
-  input = document.getElementById("search");
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("book-list");
-  li = ul.getElementsByTagName("li");
+        </div>
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/12.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>1984</h3>
+              <h4>George Orwell</h4>
+              <p>A dystopian novel exploring a totalitarian regime’s control over truth and freedom.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
 
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/13.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Great Gatsby</h3>
+              <h4>F. Scott Fitzgerald</h4>
+              <p>A tragic tale of love, wealth, and the American Dream in the Jazz Age.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/14.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Harry Potter and the Sorcerer's Stone</h3>
+              <h4>J.K. Rowling</h4>
+              <p>A boy discovers he’s a wizard and begins his magical adventures at Hogwarts.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/15.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Pride and Prejudice</h3>
+              <h4>Jane Austen</h4>
+              <p>A witty romance highlighting class and first impressions in Regency England.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/16.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Lord of the Rings</h3>
+              <h4>J.R.R. Tolkien</h4>
+              <p>A quest to destroy a powerful ring and save Middle-earth from darkness.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/17.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Catcher in the Rye</h3>
+              <h4>J.D. Salinger</h4>
+              <p>A teenager’s raw and emotional journey of rebellion and self-discovery.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/18.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Dune</h3>
+              <h4>Frank Herbert</h4>
+              <p>A sci-fi epic about power, survival, and destiny on a desert planet.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/19.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Hunger Games</h3>
+              <h4>Suzanne Collins</h4>
+              <p>A dystopian saga of survival and rebellion against a corrupt regime.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/20.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Fault in Our Stars</h3>
+              <h4>John Green</h4>
+              <p>A poignant love story between two teenagers facing terminal illness.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/21.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Sapiens: A Brief History of Humankind</h3>
+              <h4>Yuval Noah Harari</h4>
+              <p>A thought-provoking journey through the history of humanity, from the Stone Age to modern times.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/22.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Educated</h3>
+              <h4>Tara Westover</h4>
+              <p>A powerful memoir about a woman’s struggle for education and self-discovery, against the backdrop of a
+                strict, isolated upbringing.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/23.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Becoming</h3>
+              <h4>Michelle Obama</h4>
+              <p>The inspiring memoir of former First Lady Michelle Obama, charting her journey from Chicago to the
+                White
+                House and beyond.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/24.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Immortal Life of Henrietta Lacks</h3>
+              <h4>Rebecca Skloot</h4>
+              <p>A fascinating look at the life of Henrietta Lacks, whose cells revolutionized science, and the ethical
+                questions surrounding her legacy.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/25.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Quiet: The Power of Introverts in a World That Can't Stop Talking</h3>
+              <h4>Susan Cain</h4>
+              <p>An exploration of the introverted personality and its power in a world that tends to favor
+                extroversion.
+              </p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/26.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Wright Brothers</h3>
+              <h4>David McCullough</h4>
+              <p>The riveting biography of the two men who invented the airplane and changed the course of history.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/27.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Body: A Guide for Occupants</h3>
+              <h4>Bill Bryson</h4>
+              <p>A captivating and humorous exploration of the human body and how it works.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/28.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Power of Habit</h3>
+              <h4>Charles Duhigg</h4>
+              <p>An exploration of the science behind habits and how to harness them to improve our lives.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv romance" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/29.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Outliers: The Story of Success</h3>
+              <h4>Malcolm Gladwell</h4>
+              <p>A deep dive into the factors that contribute to success, beyond innate talent, showing how culture,
+                timing, and opportunities shape our lives.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv adventure" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/31.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Matilda</h3>
+              <h4>Roald Dahl</h4>
+              <p>A young girl with extraordinary intelligence and telekinetic powers takes on her cruel headmistress and
+                discovers the love of learning.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv adventure" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/32.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Charlotte's Web</h3>
+              <h4>E.B. White</h4>
+              <p>The heartwarming story of a pig named Wilbur and his friendship with a clever spider named Charlotte,
+                who
+                saves his life.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv adventure" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/33.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Percy Jackson and the Olympians: The Lightning Thief</h3>
+              <h4>Rick Riordan</h4>
+              <p>A young boy discovers that he is the son of Poseidon and embarks on an adventurous journey to prevent a
+                war among the gods.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv adventure" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/34.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Chronicles of Narnia: The Lion, the Witch, and the Wardrobe</h3>
+              <h4>C.S. Lewis</h4>
+              <p>A magical tale of four siblings who enter a fantastical world called Narnia, where they must help
+                defeat
+                the White Witch and her evil rule.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv adventure" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/35.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Hobbit</h3>
+              <h4>J.R.R. Tolkien</h4>
+              <p>Join Bilbo Baggins on his journey to reclaim treasure guarded by the dragon Smaug in this fantasy
+                classic.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv adventure" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/36.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Wonder</h3>
+              <h4>R.J. Palacio</h4>
+              <p>The inspiring story of a young boy with a facial deformity as he navigates the challenges of school and
+                friendship.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv adventure" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/37.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Maze Runner</h3>
+              <h4>James Dashner</h4>
+              <p>A young boy wakes up in a maze with no memory of his past and must work with others to escape before
+                time
+                runs out.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv adventure" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/38.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Giver</h3>
+              <h4>Lois Lowry</h4>
+              <p>A dystopian novel about a boy chosen to receive memories of the past in a society that has erased
+                emotions and choices.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv adventure" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/39.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Anne of Green Gables</h3>
+              <h4>L.M. Montgomery</h4>
+              <p>The adventures of Anne Shirley, a fiery and imaginative orphan, as she finds her place in the small
+                town
+                of Avonlea.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv adventure" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/40.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Secret Garden</h3>
+              <h4>Frances Hodgson Burnett</h4>
+              <p>A young orphan girl discovers a neglected garden and brings it back to life, transforming herself and
+                those around her.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+        <div class="filterDiv adventure" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/40.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Alice's Adventures in Wonderland</h3>
+              <h4>Lewis Carroll</h4>
+              <p>A fantastical journey through Wonderland with Alice as she encounters strange creatures and absurd
+                adventures.</p>
+              <p class="price">Price: <span>$6.99</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv adventure" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/41.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Secret Garden</h3>
+              <h4>Frances Hodgson Burnett</h4>
+              <p>A magical tale of a young girl who discovers a hidden garden and brings it back to life, transforming
+                herself and others.</p>
+              <p class="price">Price: <span>$8.49</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv adventure" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/42.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The Wind in the Willows</h3>
+              <h4>Kenneth Grahame</h4>
+              <p>The delightful adventures of Mole, Ratty, Badger, and Toad in the English countryside.</p>
+              <p class="price">Price: <span>$9.49</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv science" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/43.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Campbell Biology</h3>
+              <h4>Neil A. Campbell, Jane B. Reece</h4>
+              <p>A comprehensive textbook for understanding biology’s principles and processes, perfect for students and
+                professionals alike.</p>
+              <p class="price">Price: <span>$129.99</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv science" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/44.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Introduction to Algorithms</h3>
+              <h4>Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein</h4>
+              <p>A foundational guide to algorithm design and analysis, crucial for anyone studying computer science or
+                engineering.</p>
+              <p class="price">Price: <span>$79.99</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv science" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/45.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Theoretical Physics</h3>
+              <h4>H.J. M. H. H. Saha</h4>
+              <p>A deep dive into advanced physics concepts, exploring everything from quantum mechanics to general
+                relativity and cosmology.</p>
+              <p class="price">Price: <span>$89.99</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv science" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/46.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Economics</h3>
+              <h4>Paul A. Samuelson, William D. Nordhaus</h4>
+              <p>An essential guide to microeconomics and macroeconomics principles, offering valuable insights into
+                market forces and economic behavior.</p>
+              <p class="price">Price: <span>$69.99</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv science" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/47.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Modern Operating Systems</h3>
+              <h4>Andrew S. Tanenbaum</h4>
+              <p>Insights into operating system design and function, with a focus on modern architecture, including
+                security and performance optimization.</p>
+              <p class="price">Price: <span>$74.99</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv science" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/48.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Calculus</h3>
+              <h4>James Stewart</h4>
+              <p>A detailed explanation of calculus for students and professionals, from the basics to more complex
+                topics
+                like multivariable calculus.</p>
+              <p class="price">Price: <span>$109.99</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv reference" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/49.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Oxford English Dictionary</h3>
+              <h4>Oxford University Press</h4>
+              <p>The definitive dictionary of the English language, offering precise definitions and historical word
+                origins.</p>
+              <p class="price">Price: <span>$199.99</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv reference" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/50.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Roget’s Thesaurus</h3>
+              <h4>Peter Mark Roget</h4>
+              <p>The classic reference book for finding synonyms, antonyms, and related words, indispensable for writing
+                and word choice.</p>
+              <p class="price">Price: <span>$14.99</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv reference" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/51.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The World Almanac and Book of Facts</h3>
+              <h4>Sarah Janssen</h4>
+              <p>An annual compendium of facts, statistics, and world events, covering everything from history to
+                current
+                affairs.</p>
+              <p class="price">Price: <span>$24.99</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv reference" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/52.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Gray’s Anatomy</h3>
+              <h4>Henry Gray</h4>
+              <p>The definitive and comprehensive guide to human anatomy, used by medical students and professionals
+                around the world.</p>
+              <p class="price">Price: <span>$179.99</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv reference" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/53.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Atlas of World History</h3>
+              <h4>Patrick K. O'Brien</h4>
+              <p>A comprehensive and visually stunning guide to world history, with detailed maps and timelines of key
+                events.</p>
+              <p class="price">Price: <span>$39.99</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv reference" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/54.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Merriam-Webster's Collegiate Dictionary</h3>
+              <h4>Merriam-Webster</h4>
+              <p>The trusted dictionary for definitions, word usage, and pronunciation, widely used in schools and
+                libraries.</p>
+              <p class="price">Price: <span>$27.99</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv reference" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/55.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Guinness World Records</h3>
+              <h4>Guinness World Records</h4>
+              <p>The ultimate source for fascinating records, feats, and achievements from around the world, updated
+                annually.</p>
+              <p class="price">Price: <span>$35.99</span></p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/56.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>National Geographic</h3>
+              <h4>National Geographic Society</h4>
+              <p>Stunning visuals and stories about our planet, offering in-depth articles on geography, nature, and
+                science.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/57.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>The New Yorker</h3>
+              <h4>Various Authors</h4>
+              <p>Essays, cartoons, and commentary on culture and current events, featuring insightful reporting and
+                creative works.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/58.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Time Magazine</h3>
+              <h4>Time Inc.</h4>
+              <p>Weekly coverage of global news and issues, offering in-depth analysis and perspectives on current
+                affairs.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/59.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Scientific American</h3>
+              <h4>Scientific American</h4>
+              <p>Breakthroughs in science and technology, offering insights into new discoveries and the latest research
+                in various fields.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/60.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Vogue</h3>
+              <h4>Vogue Magazine</h4>
+              <p>Fashion trends and industry insights, offering expert opinions on style, beauty, and design from the
+                world's top designers.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/61.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Forbes</h3>
+              <h4>Forbes Media</h4>
+              <p>Business, finance, and entrepreneurship stories, covering the latest trends and influential leaders
+                shaping the global economy.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+        <div class="filterDiv" onclick="toggle(this)">
+          <li>
+            <div class="book-item" style="background-image: url('images/62.jpg');">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="book-info">
+              <h3>Popular Mechanics</h3>
+              <h4>Popular Mechanics Magazine</h4>
+              <p>Technology, science, and DIY enthusiasts’ go-to guide, offering practical advice and the latest
+                innovations in various fields.</p>
+              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
+              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
+            </div>
+          </li>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>123 Reading Street</p>
+        <p>Booktown, BT 12345</p>
+        <p>Phone: (555) 123-4567</p>
+      </div>
+      <div class="footer-section">
+        <h3>Hours</h3>
+        <p>Monday - Friday: 9AM - 8PM</p>
+        <p>Saturday: 10AM - 6PM</p>
+        <p>Sunday: 12PM - 5PM</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Additional Pages</h3>
+
+
+        <p><a href="subscribe.html" aria-label="Subscription"
+            style="text-decoration: none; color: white;">Subscription</a></p>
+        <p><a href="requests page.html" aria-label="request" style="text-decoration: none; color: white;">Request</a>
+        </p>
+        <a href="#" aria-label="Instagram"></a>
+        <a href="#" aria-label="LinkedIn"></a>
+
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Book Haven. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+
+    function searchFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("search");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("book-list");
+      li = ul.getElementsByTagName("li");
+
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
     }
-  }
+
+    filterSelection("all")
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("filterDiv");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+      }
     }
 
-filterSelection("all")
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("filterDiv");
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
-}
-
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-  }
-}
-
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+      }
     }
-  }
-  element.className = arr1.join(" ");
-}
 
-// Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("btn-container");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-</script>
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("btn-container");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+    function toggle(element) {
+      // Check if an overlay already exists
+      if (!document.querySelector('.overlay')) {
+        // Create the overlay and append it to the body
+        const overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+        overlay.onclick = closeModal; // Close the modal when clicked
+        document.body.appendChild(overlay);
+
+        // Add the 'active' class to the clicked filterDiv to show the book details
+        element.classList.add('active');
+      }
+    }
+
+    // Close the modal view and remove the overlay
+    function closeModal() {
+      const activeDiv = document.querySelector('.filterDiv.active');
+      if (activeDiv) {
+        activeDiv.classList.remove('active'); // Remove the active class
+      }
+
+      const overlay = document.querySelector('.overlay');
+      if (overlay) {
+        overlay.remove(); // Remove the overlay
+      }
+    }
+
+
+
+
+  </script>
 
 </body>
+
 </html>
