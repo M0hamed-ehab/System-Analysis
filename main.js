@@ -100,8 +100,8 @@ function popupF(x) {
     b.style.display = "block";
     document.getElementById('bname').value = '';
     document.getElementById('auth_name').value = '';
-    document.getElementById('genre').value = '';
-
+    const genres = document.querySelectorAll('input[type="checkbox"]');
+    genres.forEach(checkbox => checkbox.checked = false);
     console.log("popup");
 
 }

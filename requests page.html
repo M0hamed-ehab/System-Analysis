@@ -1,9 +1,60 @@
 <!DOCTYPE html>
 <html>
 <style>
-    input {
+    body {
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    .FC {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
         margin: auto;
+        max-width: 800px;
+    }
+
+    legend {
+        text-align: center;
+        font-size: 1.5em;
+        color: #DAA520;
+        padding: 0 10px;
+    }
+
+
+    input {
         border-radius: 7%;
+        display: block;
+        margin: 10px 0 5px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    input[type="text"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #F7DC6F;
+        border-radius: 5px;
+        font-size: 1em;
+    }
+
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: #B8860B;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #98700a;
     }
 
     label {
@@ -14,11 +65,32 @@
     }
 
     fieldset {
-        border-width: 5px;
         border-radius: 10px;
-        max-width: 50%;
         margin: auto;
-        background-color: gray;
+        border: 5px solid #B8860B;
+        padding: 40px;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-text {
+        text-align: center;
+        font-size: 1.2em;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .genres {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .genres label {
+        display: inline-flex;
+        align-items: center;
+        font-weight: normal;
     }
 </style>
 
@@ -33,7 +105,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body>
+<body style=" background-color: #f4f4f9; margin: 0; padding: 0;">
     <header>
         <nav>
             <a href="index.html" style="text-decoration: none;">
@@ -55,33 +127,49 @@
         <div class="Popup-Post">Your request has been submited</div>
     </div>
 
-    <form onsubmit="popupF(event)" class="FC">
-        <fieldset style="border-radius: 10px; max-width: 50%; margin:auto;">
-            <legend style="text-align: center; font-size: 30px;">Request a Book</legend>
-            <label for="bname">Book Name</label><br>
-            <input type="text" id="bname" name="bname" required autocomplete="off"><br>
-            <label for="auth_name">Author Name</lable><br>
-                <input type="text" id="auth_name" name="auth_name" required autocomplete="off"><br>
-                <label for="genre">Genre</label><br>
-                <input type="checkbox" id="genre1" name="genre1" value="fiction">
-                <label for="genre1">Fiction</label>
-                <input type="checkbox" id="genre2" name="genre2" value="non-fiction">
-                <label for="genre2">Non-fiction</label><br>
-                <input type="checkbox" id="genre3" name="genre3" value="drama">
-                <label for="genre3">Drama</label>
-                <input type="checkbox" id="genre4" name="genre4" value="comedy">
-                <label for="genre4">Comedy</label><br>
-                <input type="checkbox" id="genre5" name="genre5" value="romance">
-                <label for="genre5">Romance</label>
-                <input type="checkbox" id="genre6" name="genre6" value="mystery">
-                <label for="genre6">Mystery</label><br>
-                <input type="checkbox" id="genre7" name="genre7" value="horror">
-                <label for="genre7">Horror</label>
-                <input type="checkbox" id="genre8" name="genre8" value="fantasy">
-                <label for="genre8">Fantasy</label>
-                <br><br><input type="submit" name="submit">
-        </fieldset>
-    </form>
+    <div class="FC">
+        <p class="info-text">
+            Can't find the book you're looking for in our collection? Use the form below to request a new book!
+            Fill out the details, and we'll do our best to add it to our library.
+        </p>
+        <form onsubmit="popupF(event)">
+            <fieldset>
+                <legend>Request a Book</legend>
+                <label for="bname">Book Name</label>
+                <input type="text" id="bname" name="bname" placeholder="Enter the book name" required
+                    autocomplete="off">
+
+                <label for="auth_name">Author Name</label>
+                <input type="text" id="auth_name" name="auth_name" placeholder="Enter the author's name" required
+                    autocomplete="off">
+
+                <label for="genre">Genre</label>
+                <div class="genres">
+                    <input type="checkbox" id="genre1" name="genre1" value="fiction">
+                    <label for="genre1">Fiction</label>
+                    <input type="checkbox" id="genre2" name="genre2" value="non-fiction">
+                    <label for="genre2">Non-fiction</label>
+
+                    <input type="checkbox" id="genre3" name="genre3" value="drama">
+                    <label for="genre3">Drama</label>
+                    <input type="checkbox" id="genre4" name="genre4" value="comedy">
+                    <label for="genre4">Comedy</label>
+
+                    <input type="checkbox" id="genre5" name="genre5" value="romance">
+                    <label for="genre5">Romance</label>
+                    <input type="checkbox" id="genre6" name="genre6" value="mystery">
+                    <label for="genre6">Mystery</label>
+
+                    <input type="checkbox" id="genre7" name="genre7" value="horror">
+                    <label for="genre7">Horror</label>
+                    <input type="checkbox" id="genre8" name="genre8" value="fantasy">
+                    <label for="genre8">Fantasy</label>
+                </div>
+
+                <input type="submit" name="submit" value="Submit Request">
+            </fieldset>
+        </form>
+    </div>
 
     <footer>
         <div class="footer-content">
