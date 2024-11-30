@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.headerr {
+    margin-top: 6%;
+    text-align: center;
+    padding: 20px;
+    background: #DAA520;
+    color: white;
+}
+
+.headerr h1 {
+    margin: 10px 0;
+}
+
+.headerr p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+/* Subscription Plans */
+.plans {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px;
+}
+
+.plan-card {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#standard {
+    border-color: #B8860B;
+
+}
+
+.plan-card h2 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.plan-card .price {
+    font-size: 26px;
+    font-weight: bold;
+    color: #DAA520;
+    margin: 10px 0;
+}
+
+.plan-card button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background: #B8860B;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.plan-card button:hover {
+    background: #a07403;
+}
+
+/* Payment Section */
+.payment-section {
+    display: none;
+    text-align: center;
+    margin: 30px;
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.payment-method {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.payment-method:hover,
+.payment-method.selected {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-color: #ecc93c;
+}
+
+.payment-form {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.payment-form.active {
+    display: flex;
+}
+
+.additional-steps {
+    display: none;
+    text-align: center;
+}
+
+.additional-steps.active {
+    display: block;
+}
+
+.payment-form input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.confirm-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #B8860B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.confirm-btn:hover {
+    background: #a07403;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+/* Success Message */
+.success-message {
+    display: none;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 20px;
+    color: green;
+}
+
+/* Reselect Plan Button */
+.reselect-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    background: #F7DC6F;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.reselect-btn:hover {
+    background: #e7c954;
+}
+
+
+
+
+.plan-card .features {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan-card .features li {
+    font-size: 16px;
+    line-height: 1.6;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.plan-card .features li::before {
+    content: "✔";
+    font-size: 18px;
+    color: rgb(230, 196, 4);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.plan-card .features li:hover {
+    color: #333;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}

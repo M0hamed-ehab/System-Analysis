@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscription Page</title>
+  <link rel="stylesheet" href="css/subs.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/header.css">
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html" style="text-decoration: none;">
+        <div class="logo">Book Haven</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="index.html#library">Library</a></li>
+        <li><a href="commune.html">Community</a></li>
+        <li><a href="#" id="profile-link" class="view-cart"><i class="fas fa-user"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="headerr">
+    <h1>Choose Your Plan</h1>
+    <p>Select a plan that works best for you and proceed to payment.</p>
+  </div>
+
+  <main>
+    <!-- Subscription Plans -->
+    <section class="plans">
+      <div class="plan-card" id="basic">
+        <h2>Basic</h2>
+        <p class="price">10 EGP</p>
+        <p>Billed monthly. Ideal for light readers.</p>
+        <ul class="features">
+          <li>Access to 20 books per month</li>
+          <li>Ad-supported</li>
+          <li>Email customer support</li>
+        </ul>
+        <button class="select-btn" data-plan="Basic" data-price="10">Select Plan</button>
+      </div>
+
+      <div class="plan-card" id="standard">
+        <h2>Standard</h2>
+        <label style="font-size: small; color: gray;">Popular</label>
+        <p class="price">20 EGP</p>
+        <p>Billed monthly. Great for individuals with moderate needs.</p>
+        <ul class="features">
+          <li>Access to 50 books per month</li>
+          <li>Ad-supported</li>
+          <li>Basic customer support</li>
+        </ul>
+        <button class="select-btn" data-plan="Standard" data-price="20">Select Plan</button>
+      </div>
+
+      <div class="plan-card" id="premium">
+        <h2>Premium</h2>
+        <p class="price">50 EGP</p>
+        <p>Billed monthly. Perfect for avid readers and families.</p>
+        <ul class="features">
+          <li>Unlimited book access</li>
+          <li>No ads</li>
+          <li>Priority customer support</li>
+          <li>Family sharing (up to 3 accounts)</li>
+        </ul>
+        <button class="select-btn" data-plan="Premium" data-price="50">Select Plan</button>
+      </div>
+
+      <div class="plan-card" id="enterprise">
+        <h2>Enterprise</h2>
+        <p class="price">100 EGP</p>
+        <p>Billed annually. Best for organizations and libraries.</p>
+        <ul class="features">
+          <li>Unlimited book access</li>
+          <li>Dedicated account manager</li>
+          <li>Custom integrations</li>
+          <li>Multi-user access (up to 50 accounts)</li>
+          <li>Advanced analytics and reporting</li>
+        </ul>
+        <button class="select-btn" data-plan="Enterprise" data-price="100">Select Plan</button>
+      </div>
+
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="payment-section" id="payment-section">
+      <h2>Select a Payment Method</h2>
+      <div class="payment-methods">
+        <div class="payment-method" data-method="Card">Card Payment</div>
+        <div class="payment-method" data-method="Vodafone Cash">Vodafone Cash</div>
+        <div class="payment-method" data-method="Bank Transfer">Bank Transfer</div>
+      </div>
+
+      <!-- Reselect Plan Button -->
+      <button class="reselect-btn" id="reselect-btn">Reselect Plan</button>
+
+      <!-- Card Payment Form -->
+      <form class="payment-form" id="card-payment-form">
+        <input type="text" id="card-number" placeholder="Card Number" maxlength="16" required>
+        <span class="error" id="card-error"></span>
+        <input type="text" id="card-holder" placeholder="Cardholder Name" required>
+        <input type="text" id="expiry-date" placeholder="Expiry Date (MM/YY)" required>
+        <input type="text" id="cvv" placeholder="CVV" maxlength="3" required>
+        <button type="submit" class="confirm-btn">Confirm Payment</button>
+      </form>
+
+      <!-- Vodafone Cash and Bank Transfer Steps -->
+      <div class="additional-steps" id="vodafone-cash">
+        <h3>Vodafone Cash</h3>
+        <p>Send the amount to <b>01012345678</b> and enter the transaction ID below:</p>
+        <input type="text" placeholder="Transaction ID" required>
+        <button class="confirm-btn">Confirm Payment</button>
+      </div>
+      <div class="additional-steps" id="bank-transfer">
+        <h3>Bank Transfer</h3>
+        <p>Transfer the amount to <b>Bank XYZ Account: 123456789</b> and enter the reference number below:</p>
+        <input type="text" placeholder="Reference Number" required>
+        <button class="confirm-btn">Confirm Payment</button>
+      </div>
+
+      <!-- Success Message -->
+      <div class="success-message" id="success-message">
+        <p>Payment Successful! Thank you for subscribing.</p>
+      </div>
+    </section>
+  </main>
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>123 Reading Street</p>
+        <p>Booktown, BT 12345</p>
+        <p>Phone: (555) 123-4567</p>
+      </div>
+      <div class="footer-section">
+        <h3>Hours</h3>
+        <p>Monday - Friday: 9AM - 8PM</p>
+        <p>Saturday: 10AM - 6PM</p>
+        <p>Sunday: 12PM - 5PM</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Additional Pages</h3>
+
+
+        <p><a href="subscribe.html" aria-label="Subscription"
+            style="text-decoration: none; color: white;">Subscription</a></p>
+        <p><a href="requests page.html" aria-label="request" style="text-decoration: none; color: white;">Request</a>
+        </p>
+        <a href="#" aria-label="Instagram"></a>
+        <a href="#" aria-label="LinkedIn"></a>
+
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Book Haven. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Select Plan Button Logic
+    document.querySelectorAll('.select-btn').forEach(button => {
+      button.addEventListener('click', function () {
+        const plan = this.getAttribute('data-plan');
+        const price = this.getAttribute('data-price');
+
+        document.getElementById('payment-section').style.display = 'block';
+        document.getElementById('payment-section').setAttribute('data-plan', plan);
+        document.getElementById('payment-section').setAttribute('data-price', price);
+      });
+    });
+
+    // Reselect Plan Button Logic
+    document.getElementById('reselect-btn').addEventListener('click', function () {
+      document.getElementById('payment-section').style.display = 'none';
+    });
+
+    // Payment Method Selection
+    document.querySelectorAll('.payment-method').forEach(method => {
+      method.addEventListener('click', function () {
+        document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
+        this.classList.add('selected');
+
+        // Hide all forms initially
+        document.querySelectorAll('.payment-form').forEach(form => form.classList.remove('active'));
+        document.querySelectorAll('.additional-steps').forEach(step => step.classList.remove('active'));
+
+        const methodType = this.getAttribute('data-method');
+
+        // Show relevant form
+        if (methodType === 'Card') {
+          document.getElementById('card-payment-form').classList.add('active');
+        } else {
+          document.getElementById(methodType.toLowerCase().replace(' ', '-')).classList.add('active');
+        }
+      });
+    });
+
+    // Form Submission and Payment Confirmation
+    document.querySelector('#card-payment-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      document.getElementById('success-message').style.display = 'block';
+      setTimeout(function () {
+        window.location.href = 'index.html';
+      }, 3000);
+    });
+  </script>
+</body>
+
+</html>
