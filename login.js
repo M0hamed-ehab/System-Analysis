@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (loggedInUser) {
                 window.location.href = "Profile.html";
             } else {
-                window.location.href = "register.html";
+                window.location.href = "Register.html";
             }
         });
     }
