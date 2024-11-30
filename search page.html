@@ -114,6 +114,7 @@
     color: #fff;
     cursor: pointer;
     transition: transform 0.3s ease, z-index 0.3s ease;
+    display: none;
   }
 
   .book-item {
@@ -249,16 +250,20 @@
       <button class="btn" onclick="filterSelection('comedy')"> Comedy</button>
       <button class="btn" onclick="filterSelection('fiction')"> fiction</button>
       <button class="btn" onclick="filterSelection('non-fiction')"> Non-fiction</button>
+      <button class="btn" onclick="filterSelection('sci-fi')">Sci-fi</button>
       <button class="btn" onclick="filterSelection('drama')"> Drama</button>
       <button class="btn" onclick="filterSelection('romance')"> Romance</button>
       <button class="btn" onclick="filterSelection('mystery')"> Mystery</button>
       <button class="btn" onclick="filterSelection('horror')"> Horror</button>
       <button class="btn" onclick="filterSelection('fantasy')">Fantasy</button>
+      <button class="btn" onclick="filterSelection('thriller')">Thriller</button>
+      <button class="btn" onclick="filterSelection('novel')">Novel</button>
+      <button class="btn" onclick="filterSelection('education')">Education</button>
 
     </div>
     <div id="book-list">
       <div class="container">
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv thriller novel" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/11.jpg');">
               <div class="rating">
@@ -280,7 +285,7 @@
           </li>
 
         </div>
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv sci-fi" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/12.jpg');">
               <div class="rating">
@@ -301,7 +306,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv novel" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/13.jpg');">
               <div class="rating">
@@ -322,7 +327,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv fantasy" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/14.jpg');">
               <div class="rating">
@@ -343,7 +348,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv romance fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/15.jpg');">
               <div class="rating">
@@ -364,7 +369,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv fantasy" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/16.jpg');">
               <div class="rating">
@@ -385,7 +390,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv novel" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/17.jpg');">
               <div class="rating">
@@ -406,7 +411,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv novel sci-fi fantasy" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/18.jpg');">
               <div class="rating">
@@ -427,7 +432,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv novel thriller sci-fi" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/19.jpg');">
               <div class="rating">
@@ -448,7 +453,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv novel romance" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/20.jpg');">
               <div class="rating">
@@ -469,7 +474,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv non-fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/21.jpg');">
               <div class="rating">
@@ -490,7 +495,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv non-fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/22.jpg');">
               <div class="rating">
@@ -512,7 +517,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv non-fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/23.jpg');">
               <div class="rating">
@@ -535,7 +540,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv non-fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/24.jpg');">
               <div class="rating">
@@ -557,7 +562,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv non-fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/25.jpg');">
               <div class="rating">
@@ -580,7 +585,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv non-fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/26.jpg');">
               <div class="rating">
@@ -601,7 +606,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv non-fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/27.jpg');">
               <div class="rating">
@@ -622,7 +627,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv non-fiction onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/28.jpg');">
               <div class="rating">
@@ -643,7 +648,7 @@
           </li>
         </div>
 
-        <div class="filterDiv romance" onclick="toggle(this)">
+        <div class="filterDiv non-fiction onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/29.jpg');">
               <div class="rating">
@@ -665,7 +670,7 @@
           </li>
         </div>
 
-        <div class="filterDiv adventure" onclick="toggle(this)">
+        <div class="filterDiv fantasy" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/31.jpg');">
               <div class="rating">
@@ -687,7 +692,7 @@
           </li>
         </div>
 
-        <div class="filterDiv adventure" onclick="toggle(this)">
+        <div class="filterDiv fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/32.jpg');">
               <div class="rating">
@@ -710,7 +715,7 @@
           </li>
         </div>
 
-        <div class="filterDiv adventure" onclick="toggle(this)">
+        <div class="filterDiv adventure fantasy sci-fi" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/33.jpg');">
               <div class="rating">
@@ -732,7 +737,7 @@
           </li>
         </div>
 
-        <div class="filterDiv adventure" onclick="toggle(this)">
+        <div class="filterDiv fantasy novel" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/34.jpg');">
               <div class="rating">
@@ -755,7 +760,7 @@
           </li>
         </div>
 
-        <div class="filterDiv adventure" onclick="toggle(this)">
+        <div class="filterDiv novel fantasy" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/35.jpg');">
               <div class="rating">
@@ -777,7 +782,7 @@
           </li>
         </div>
 
-        <div class="filterDiv adventure" onclick="toggle(this)">
+        <div class="filterDiv fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/36.jpg');">
               <div class="rating">
@@ -799,7 +804,7 @@
           </li>
         </div>
 
-        <div class="filterDiv adventure" onclick="toggle(this)">
+        <div class="filterDiv sci-fi thriller" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/37.jpg');">
               <div class="rating">
@@ -822,7 +827,7 @@
           </li>
         </div>
 
-        <div class="filterDiv adventure" onclick="toggle(this)">
+        <div class="filterDiv novel sci-fi" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/38.jpg');">
               <div class="rating">
@@ -844,7 +849,7 @@
           </li>
         </div>
 
-        <div class="filterDiv adventure" onclick="toggle(this)">
+        <div class="filterDiv fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/39.jpg');">
               <div class="rating">
@@ -867,7 +872,7 @@
           </li>
         </div>
 
-        <div class="filterDiv adventure" onclick="toggle(this)">
+        <div class="filterDiv fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/40.jpg');">
               <div class="rating">
@@ -888,7 +893,7 @@
             </div>
           </li>
         </div>
-        <div class="filterDiv adventure" onclick="toggle(this)">
+        <div class="filterDiv fantasy" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/40.jpg');">
               <div class="rating">
@@ -911,7 +916,7 @@
           </li>
         </div>
 
-        <div class="filterDiv adventure" onclick="toggle(this)">
+        <div class="filterDiv fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/41.jpg');">
               <div class="rating">
@@ -934,7 +939,7 @@
           </li>
         </div>
 
-        <div class="filterDiv adventure" onclick="toggle(this)">
+        <div class="filterDiv novel" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/42.jpg');">
               <div class="rating">
@@ -956,7 +961,7 @@
           </li>
         </div>
 
-        <div class="filterDiv science" onclick="toggle(this)">
+        <div class="filterDiv science education non-fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/43.jpg');">
               <div class="rating">
@@ -979,7 +984,7 @@
           </li>
         </div>
 
-        <div class="filterDiv science" onclick="toggle(this)">
+        <div class="filterDiv non-fiction education" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/44.jpg');">
               <div class="rating">
@@ -1002,7 +1007,7 @@
           </li>
         </div>
 
-        <div class="filterDiv science" onclick="toggle(this)">
+        <div class="filterDiv non-fiction education" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/45.jpg');">
               <div class="rating">
@@ -1025,7 +1030,7 @@
           </li>
         </div>
 
-        <div class="filterDiv science" onclick="toggle(this)">
+        <div class="filterDiv non-fiction education" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/46.jpg');">
               <div class="rating">
@@ -1048,7 +1053,7 @@
           </li>
         </div>
 
-        <div class="filterDiv science" onclick="toggle(this)">
+        <div class="filterDiv non-fiction education" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/47.jpg');">
               <div class="rating">
@@ -1071,7 +1076,7 @@
           </li>
         </div>
 
-        <div class="filterDiv science" onclick="toggle(this)">
+        <div class="filterDiv non-fiction education" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/48.jpg');">
               <div class="rating">
@@ -1095,7 +1100,7 @@
           </li>
         </div>
 
-        <div class="filterDiv reference" onclick="toggle(this)">
+        <div class="filterDiv non-fiction education" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/49.jpg');">
               <div class="rating">
@@ -1118,7 +1123,7 @@
           </li>
         </div>
 
-        <div class="filterDiv reference" onclick="toggle(this)">
+        <div class="filterDiv non-fiction education" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/50.jpg');">
               <div class="rating">
@@ -1141,7 +1146,7 @@
           </li>
         </div>
 
-        <div class="filterDiv reference" onclick="toggle(this)">
+        <div class="filterDiv non-fiction education" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/51.jpg');">
               <div class="rating">
@@ -1165,7 +1170,7 @@
           </li>
         </div>
 
-        <div class="filterDiv reference" onclick="toggle(this)">
+        <div class="filterDiv non-fiction education" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/52.jpg');">
               <div class="rating">
@@ -1188,7 +1193,7 @@
           </li>
         </div>
 
-        <div class="filterDiv reference" onclick="toggle(this)">
+        <div class="filterDiv non-fiction education" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/53.jpg');">
               <div class="rating">
@@ -1211,7 +1216,7 @@
           </li>
         </div>
 
-        <div class="filterDiv reference" onclick="toggle(this)">
+        <div class="filterDiv non-fiction education" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/54.jpg');">
               <div class="rating">
@@ -1234,7 +1239,7 @@
           </li>
         </div>
 
-        <div class="filterDiv reference" onclick="toggle(this)">
+        <div class="filterDiv non-fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/55.jpg');">
               <div class="rating">
@@ -1257,7 +1262,7 @@
           </li>
         </div>
 
-        <div class="filterDiv" onclick="toggle(this)">
+        <div class="filterDiv non-fiction education" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/56.jpg');">
               <div class="rating">
@@ -1323,7 +1328,7 @@
           </li>
         </div>
 
-        <div class="filterDiv" onclick="toggle(this)">
+        <div class="filterDiv non-fiction education" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/59.jpg');">
               <div class="rating">
@@ -1345,7 +1350,7 @@
           </li>
         </div>
 
-        <div class="filterDiv" onclick="toggle(this)">
+        <div class="filterDiv non-fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/60.jpg');">
               <div class="rating">
@@ -1367,7 +1372,7 @@
           </li>
         </div>
 
-        <div class="filterDiv" onclick="toggle(this)">
+        <div class="filterDiv non-fiction" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/61.jpg');">
               <div class="rating">
@@ -1389,7 +1394,7 @@
           </li>
         </div>
 
-        <div class="filterDiv" onclick="toggle(this)">
+        <div class="filterDiv non-fiction education" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/62.jpg');">
               <div class="rating">
@@ -1469,7 +1474,7 @@
       li = ul.getElementsByTagName("li");
 
       for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
+        a = li[i].getElementsByTagName("h3")[0];
         if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
           li[i].style.display = "";
         } else {
