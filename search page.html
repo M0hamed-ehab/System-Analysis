@@ -61,6 +61,14 @@
     z-index: 2;
   }
 
+  .filterDiv.active .book-item {
+    height: 80vh;
+
+  }
+
+
+
+
   .filterDiv.active .book-info {
     display: flex;
     flex-wrap: wrap;
@@ -98,8 +106,7 @@
 
 
   .filterDiv {
-    flex: 1 1 calc(20% - 20px);
-    box-sizing: border-box;
+
     position: relative;
     background-size: cover;
     background-position: center;
@@ -240,7 +247,7 @@
     <h1 style="margin-top: 8%;">Search library</h1>
     <div class="search-bar">
 
-      <input type="search" id="search" name="search" placeholder="search.." onkeyup="searchFunction()">
+      <input type="text" id="search" name="search" placeholder="search.." onkeyup="searchFunction()">
 
     </div>
 
@@ -627,7 +634,7 @@
           </li>
         </div>
 
-        <div class="filterDiv non-fiction onclick="toggle(this)">
+        <div class="filterDiv non-fiction onclick=" toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/28.jpg');">
               <div class="rating">
@@ -648,7 +655,7 @@
           </li>
         </div>
 
-        <div class="filterDiv non-fiction onclick="toggle(this)">
+        <div class="filterDiv non-fiction onclick=" toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/29.jpg');">
               <div class="rating">
@@ -872,27 +879,7 @@
           </li>
         </div>
 
-        <div class="filterDiv fiction" onclick="toggle(this)">
-          <li>
-            <div class="book-item" style="background-image: url('images/40.jpg');">
-              <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-alt"></i>
-              </div>
-            </div>
-            <div class="book-info">
-              <h3>The Secret Garden</h3>
-              <h4>Frances Hodgson Burnett</h4>
-              <p>A young orphan girl discovers a neglected garden and brings it back to life, transforming herself and
-                those around her.</p>
-              <button class="add-to-cart" onclick="popup()">Add to Cart</button>
-              <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
-            </div>
-          </li>
-        </div>
+
         <div class="filterDiv fantasy" onclick="toggle(this)">
           <li>
             <div class="book-item" style="background-image: url('images/40.jpg');">
@@ -909,7 +896,6 @@
               <h4>Lewis Carroll</h4>
               <p>A fantastical journey through Wonderland with Alice as she encounters strange creatures and absurd
                 adventures.</p>
-              <p class="price">Price: <span>$6.99</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -932,7 +918,6 @@
               <h4>Frances Hodgson Burnett</h4>
               <p>A magical tale of a young girl who discovers a hidden garden and brings it back to life, transforming
                 herself and others.</p>
-              <p class="price">Price: <span>$8.49</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -954,7 +939,6 @@
               <h3>The Wind in the Willows</h3>
               <h4>Kenneth Grahame</h4>
               <p>The delightful adventures of Mole, Ratty, Badger, and Toad in the English countryside.</p>
-              <p class="price">Price: <span>$9.49</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -977,7 +961,6 @@
               <h4>Neil A. Campbell, Jane B. Reece</h4>
               <p>A comprehensive textbook for understanding biology’s principles and processes, perfect for students and
                 professionals alike.</p>
-              <p class="price">Price: <span>$129.99</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -1000,7 +983,6 @@
               <h4>Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein</h4>
               <p>A foundational guide to algorithm design and analysis, crucial for anyone studying computer science or
                 engineering.</p>
-              <p class="price">Price: <span>$79.99</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -1023,7 +1005,6 @@
               <h4>H.J. M. H. H. Saha</h4>
               <p>A deep dive into advanced physics concepts, exploring everything from quantum mechanics to general
                 relativity and cosmology.</p>
-              <p class="price">Price: <span>$89.99</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -1046,7 +1027,6 @@
               <h4>Paul A. Samuelson, William D. Nordhaus</h4>
               <p>An essential guide to microeconomics and macroeconomics principles, offering valuable insights into
                 market forces and economic behavior.</p>
-              <p class="price">Price: <span>$69.99</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -1069,7 +1049,6 @@
               <h4>Andrew S. Tanenbaum</h4>
               <p>Insights into operating system design and function, with a focus on modern architecture, including
                 security and performance optimization.</p>
-              <p class="price">Price: <span>$74.99</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -1093,7 +1072,6 @@
               <p>A detailed explanation of calculus for students and professionals, from the basics to more complex
                 topics
                 like multivariable calculus.</p>
-              <p class="price">Price: <span>$109.99</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -1116,7 +1094,6 @@
               <h4>Oxford University Press</h4>
               <p>The definitive dictionary of the English language, offering precise definitions and historical word
                 origins.</p>
-              <p class="price">Price: <span>$199.99</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -1139,7 +1116,6 @@
               <h4>Peter Mark Roget</h4>
               <p>The classic reference book for finding synonyms, antonyms, and related words, indispensable for writing
                 and word choice.</p>
-              <p class="price">Price: <span>$14.99</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -1163,7 +1139,6 @@
               <p>An annual compendium of facts, statistics, and world events, covering everything from history to
                 current
                 affairs.</p>
-              <p class="price">Price: <span>$24.99</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -1186,7 +1161,6 @@
               <h4>Henry Gray</h4>
               <p>The definitive and comprehensive guide to human anatomy, used by medical students and professionals
                 around the world.</p>
-              <p class="price">Price: <span>$179.99</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -1209,7 +1183,6 @@
               <h4>Patrick K. O'Brien</h4>
               <p>A comprehensive and visually stunning guide to world history, with detailed maps and timelines of key
                 events.</p>
-              <p class="price">Price: <span>$39.99</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -1232,7 +1205,6 @@
               <h4>Merriam-Webster</h4>
               <p>The trusted dictionary for definitions, word usage, and pronunciation, widely used in schools and
                 libraries.</p>
-              <p class="price">Price: <span>$27.99</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
@@ -1255,7 +1227,6 @@
               <h4>Guinness World Records</h4>
               <p>The ultimate source for fascinating records, feats, and achievements from around the world, updated
                 annually.</p>
-              <p class="price">Price: <span>$35.99</span></p>
               <button class="add-to-cart" onclick="popup()">Add to Cart</button>
               <button class="add-to-cart" onclick="location.href='borrow.html'">Borrow</button>
             </div>
